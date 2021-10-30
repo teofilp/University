@@ -1,0 +1,4 @@
+sum(0, 0).
+sum(N, S):-
+    sum(N+1, SR),
+    S is N + SR.
