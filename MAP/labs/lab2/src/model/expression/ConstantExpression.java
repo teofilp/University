@@ -14,4 +14,14 @@ public class ConstantExpression implements Expression {
     public Value evaluate(IMap<String, Value> valueTable)  {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    @Override
+    public Expression clone() {
+        return new ConstantExpression(value.clone());
+    }
 }

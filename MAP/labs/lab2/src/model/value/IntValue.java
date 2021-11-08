@@ -21,4 +21,9 @@ public class IntValue implements Value {
 
     @Override
     public Type getType() { return  new IntType(); }
+
+    @Override
+    public Value clone() {
+        return new IntValue(value);
+    }
 }

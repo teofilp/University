@@ -16,4 +16,14 @@ public class BooleanValue implements Value {
 
     @Override
     public Type getType() { return new BooleanType(); }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    @Override
+    public Value clone() {
+        return new BooleanValue(value);
+    }
 }

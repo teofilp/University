@@ -29,4 +29,14 @@ public class DeclarationStatement implements Statement {
 
         return state;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", type, id);
+    }
+
+    @Override
+    public Statement clone() {
+        return new DeclarationStatement(id, type.clone());
+    }
 }

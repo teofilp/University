@@ -8,8 +8,6 @@ import model.type.BooleanType;
 import model.value.BooleanValue;
 import model.value.Value;
 
-import java.util.Map;
-
 public class ConditionalStatement implements Statement {
     Statement trueStatement, falseStatement;
     Expression condition;
@@ -37,5 +35,15 @@ public class ConditionalStatement implements Statement {
         }
 
         return (BooleanValue) conditionValue;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("if (%s) { %s } else { %s }", condition, trueStatement, falseStatement);
+    }
+
+    @Override
+    public Statement clone() {
+        return new ConditionalStatement(trueStatement.clone(), falseStatement.clone(), condition.clone());
     }
 }

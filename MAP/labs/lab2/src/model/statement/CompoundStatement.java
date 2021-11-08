@@ -24,10 +24,11 @@ public class CompoundStatement implements Statement {
 
     @Override
     public String toString() {
-        return "CompoundStatement{" +
-                "first=" + first +
-                ", second=" + second +
-                '}';
+        return String.format("%s | %s", first, second);
     }
 
+    @Override
+    public Statement clone() {
+        return new CompoundStatement(first.clone(), second.clone());
+    }
 }

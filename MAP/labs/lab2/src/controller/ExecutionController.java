@@ -1,12 +1,9 @@
 package controller;
 
-import model.CustomException;
-import model.IRepository;
-import model.IStack;
-import model.ProgramState;
+import model.*;
 import model.statement.Statement;
 
-import java.util.stream.Collectors;
+import java.io.IOException;
 
 public class ExecutionController {
     private IRepository<ProgramState> programStates;
@@ -15,8 +12,8 @@ public class ExecutionController {
         this.programStates = programStates;
     }
 
-    public ProgramState runOne(int position) throws CustomException {
-        ProgramState state = programStates.get(position);
+    public ProgramState runOne() throws CustomException {
+        ProgramState state = programStates.get(0).clone();
         IStack<Statement> executionStack = state.getExecutionStack();
 
         if (executionStack.isEmpty()) throw new CustomException("cannot run empty stack");
@@ -26,14 +23,20 @@ public class ExecutionController {
         return current.execute(state);
     }
 
-    public ProgramState runAll(int position) throws CustomException {
-        ProgramState state = programStates.get(position);
+    public ProgramState runAll() throws CustomException, IOException {
+        ProgramState state = programStates.get(0).clone();
         IStack<Statement> executionStack = state.getExecutionStack();
 
         while (!executionStack.isEmpty()) {
+            System.out.println(state);
+            programStates.log();
+
             executionStack.pop().execute(state);
         }
-        System.out.println(state.getOutput().getStream().map(Object::toString).collect(Collectors.joining()));
+
+        System.out.println(state);
+        programStates.log();
+
         return state;
     }
 }

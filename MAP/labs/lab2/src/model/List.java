@@ -12,6 +12,10 @@ public class List<T> implements IList<T> {
         list = new ArrayList<>();
     }
 
+    private List(ArrayList<T> old) {
+        list = (ArrayList<T>) old.clone();
+    }
+
     @Override
     public void add(T elem) {
         list.add(elem);
@@ -27,5 +31,19 @@ public class List<T> implements IList<T> {
         return list.stream();
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder().append("[ ");
 
+        for (T item: list) {
+            stringBuilder.append(item).append(", ");
+        }
+
+        return stringBuilder.append(" ]").toString();
+    }
+
+    @Override
+    public IList<T> clone() {
+        return new List<>(list);
+    }
 }

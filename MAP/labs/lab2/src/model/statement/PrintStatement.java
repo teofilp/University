@@ -23,4 +23,14 @@ public class PrintStatement implements Statement {
 
         return state;
     }
+
+    @Override
+    public String toString() {
+        return String.format("print ( %s )", expression);
+    }
+
+    @Override
+    public Statement clone() {
+        return new PrintStatement(expression.clone());
+    }
 }

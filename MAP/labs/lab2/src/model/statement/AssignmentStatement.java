@@ -34,4 +34,14 @@ public class AssignmentStatement implements Statement {
         symbolTable.put(id, newValue);
         return state;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s = %s", id, expression);
+    }
+
+    @Override
+    public Statement clone() {
+        return new AssignmentStatement(id, expression.clone());
+    }
 }

@@ -15,4 +15,14 @@ public class VariableExpression implements Expression {
     public Value evaluate(IMap<String, Value> valueTable) {
         return valueTable.get(id);
     }
+
+    @Override
+    public String toString() {
+        return id;
+    }
+
+    @Override
+    public Expression clone() {
+        return new VariableExpression(id);
+    }
 }

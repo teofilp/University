@@ -2,8 +2,8 @@ package model.expression;
 
 import model.CustomException;
 import model.IMap;
-import model.operation.ArithmeticOperation;
-import model.operation.OperationHandler;
+import model.operation.ArithmeticOperator;
+import model.operation.OperatorHandler;
 import model.type.IntType;
 import model.value.IntValue;
 import model.value.Value;
@@ -13,21 +13,21 @@ import java.util.Map;
 
 public class ArithmeticExpression implements Expression {
     private Expression leftOperand, rightOperand;
-    private ArithmeticOperation operation;
-    private Map<ArithmeticOperation, OperationHandler> operationHandler = new HashMap<>() {{
-        put(ArithmeticOperation.Addition, (left, right) -> new IntValue(getIntegerValue(left) + getIntegerValue(right)));
-        put(ArithmeticOperation.Subtraction, (left, right) -> new IntValue(getIntegerValue(left) - getIntegerValue(right)));
-        put(ArithmeticOperation.Multiplication, (left, right) -> new IntValue(getIntegerValue(left) * getIntegerValue(right)));
-        put(ArithmeticOperation.Division, (left, right) -> {
+    private ArithmeticOperator operator;
+    private Map<ArithmeticOperator, OperatorHandler> operationHandler = new HashMap<>() {{
+        put(ArithmeticOperator.Addition, (left, right) -> new IntValue(getIntegerValue(left) + getIntegerValue(right)));
+        put(ArithmeticOperator.Subtraction, (left, right) -> new IntValue(getIntegerValue(left) - getIntegerValue(right)));
+        put(ArithmeticOperator.Multiplication, (left, right) -> new IntValue(getIntegerValue(left) * getIntegerValue(right)));
+        put(ArithmeticOperator.Division, (left, right) -> {
             if (getIntegerValue(right) == 0) throw new CustomException("right operand cannot be zero");
             return new IntValue(getIntegerValue(left) / getIntegerValue(right));
         });
     }};
 
-    public ArithmeticExpression(Expression left, Expression right, ArithmeticOperation operation) {
+    public ArithmeticExpression(Expression left, Expression right, ArithmeticOperator operation) {
         this.leftOperand = left;
         this.rightOperand = right;
-        this.operation = operation;
+        this.operator = operation;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class ArithmeticExpression implements Expression {
         var leftOperand = getIntValue(this.leftOperand, valueTable);
         var rightOperand = getIntValue(this.rightOperand, valueTable);
 
-        return operationHandler.get(operation).handle(leftOperand, rightOperand);
+        return operationHandler.get(operator).handle(leftOperand, rightOperand);
     }
 
     private IntValue getIntValue(Expression expression, IMap<String, Value> valueTable) throws CustomException {
@@ -50,5 +50,15 @@ public class ArithmeticExpression implements Expression {
 
     private int getIntegerValue(Value v) {
         return ((IntValue) v).getValue();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", leftOperand, operator.toString(), rightOperand);
+    }
+
+    @Override
+    public Expression clone() {
+        return new ArithmeticExpression(leftOperand.clone(), rightOperand.clone(), operator);
     }
 }

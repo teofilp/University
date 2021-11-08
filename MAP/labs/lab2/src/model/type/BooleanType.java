@@ -18,4 +18,9 @@ public class BooleanType implements Type {
     public Value getDefaultValue() {
         return new BooleanValue(false);
     }
+
+    @Override
+    public Type clone() {
+        return new BooleanType();
+    }
 }
