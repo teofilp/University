@@ -1,5 +1,6 @@
 package model.expression;
 
+import model.IHeap;
 import model.IMap;
 import model.value.Value;
 
@@ -11,7 +12,7 @@ public class ConstantExpression implements Expression {
     }
 
     @Override
-    public Value evaluate(IMap<String, Value> valueTable)  {
+    public Value evaluate(IMap<String, Value> valueTable, IHeap heap)  {
         return value;
     }
 

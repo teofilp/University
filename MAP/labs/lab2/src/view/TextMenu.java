@@ -42,4 +42,8 @@ public class TextMenu {
             command.execute();
         }
     }
+
+    public int getCommandsNo() {
+        return commands.getKeys().size();
+    }
 }

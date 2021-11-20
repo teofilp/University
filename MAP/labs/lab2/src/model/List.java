@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class List<T> implements IList<T> {
-    private final ArrayList<T> list;
+    private final java.util.ArrayList<T> list;
 
     public List() {
         list = new ArrayList<>();
     }
 
-    private List(ArrayList<T> old) {
+    public List(ArrayList<T> old) {
         list = (ArrayList<T>) old.clone();
     }
 
@@ -44,6 +44,6 @@ public class List<T> implements IList<T> {
 
     @Override
     public IList<T> clone() {
-        return new List<>(list);
+        return new List<T>(list);
     }
 }

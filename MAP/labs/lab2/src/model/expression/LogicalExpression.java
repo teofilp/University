@@ -1,6 +1,7 @@
 package model.expression;
 
 import model.CustomException;
+import model.IHeap;
 import model.IMap;
 import model.operation.LogicalOperator;
 import model.operation.OperatorHandler;
@@ -25,17 +26,17 @@ public class LogicalExpression implements Expression {
     }
 
     @Override
-    public Value evaluate(IMap<String, Value> symbolTable) throws CustomException {
-        var leftValue = getBoolValue(left, symbolTable);
-        var rightValue = getBoolValue(right, symbolTable);
+    public Value evaluate(IMap<String, Value> symbolTable, IHeap heap) throws CustomException {
+        var leftValue = getBoolValue(left, symbolTable, heap);
+        var rightValue = getBoolValue(right, symbolTable, heap);
 
         return map.get(operator).handle(leftValue, rightValue);
     }
 
-    private BooleanValue getBoolValue(Expression expression, IMap<String, Value> symbolTable) throws CustomException {
-        var value = expression.evaluate(symbolTable);
+    private BooleanValue getBoolValue(Expression expression, IMap<String, Value> symbolTable, IHeap heap) throws CustomException {
+        var value = expression.evaluate(symbolTable, heap);
 
-        if (!value.getType().equals(BooleanType.class)) {
+        if (!value.getType().equals(new BooleanType())) {
             throw new CustomException(String.format("Expected boolean expression but found %s", value.getType().toString()));
         }
 

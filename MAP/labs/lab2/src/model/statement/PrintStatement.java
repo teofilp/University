@@ -19,7 +19,7 @@ public class PrintStatement implements Statement {
         var output = state.getOutput();
         var symbolTable = state.getSymbolTable();
 
-        output.add(expression.evaluate(symbolTable));
+        output.add(expression.evaluate(symbolTable, state.getHeap()));
 
         return state;
     }

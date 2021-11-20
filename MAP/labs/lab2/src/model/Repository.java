@@ -3,14 +3,21 @@ package model;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
-public class Repository<T> implements IRepository<T> {
+public class Repository<T extends Cloneable<T>> implements IRepository<T> {
     IList<T> data;
     String fileName;
 
     public Repository(String fileName) {
         this.fileName = fileName;
         this.data = new List<>();
+    }
+
+    private Repository(IList<T> data, String fileName) {
+        this.data = new List<>(data.getStream().map(Cloneable::clone).collect(Collectors.toCollection(ArrayList::new)));
+        this.fileName = fileName;
     }
 
     @Override
@@ -32,5 +39,10 @@ public class Repository<T> implements IRepository<T> {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
             writer.append(builder.toString());
         }
+    }
+
+    @Override
+    public IRepository<T> clone() {
+        return new Repository<T>(data, fileName);
     }
 }

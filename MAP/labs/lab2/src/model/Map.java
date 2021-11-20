@@ -52,6 +52,11 @@ public class Map<K, V> implements IMap<K, V> {
     }
 
     @Override
+    public Collection<K> getKeys() {
+        return map.keySet();
+    }
+
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder().append("{ ");
 

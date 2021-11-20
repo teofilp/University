@@ -1,12 +1,8 @@
 package model.statement;
 
 import model.CustomException;
-import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
-import model.value.Value;
-
-import java.util.Map;
 
 public class AssignmentStatement implements Statement {
     private final String id;
@@ -20,14 +16,14 @@ public class AssignmentStatement implements Statement {
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
         var symbolTable = state.getSymbolTable();
-        var newValue = expression.evaluate(symbolTable);
+        var newValue = expression.evaluate(symbolTable, state.getHeap());
         var existingValue = symbolTable.get(id);
 
         if (existingValue == null) {
             throw new CustomException(String.format("Variable %s was not declared", id));
         }
 
-        if (!existingValue.getType().equals(newValue.getType().getClass())) {
+        if (!existingValue.getType().equals(newValue.getType())) {
             throw new CustomException(String.format("Incompatible type between %s and %s", existingValue.getType().toString(), newValue.getType().toString()));
         }
 

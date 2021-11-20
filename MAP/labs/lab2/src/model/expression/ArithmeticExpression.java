@@ -1,6 +1,7 @@
 package model.expression;
 
 import model.CustomException;
+import model.IHeap;
 import model.IMap;
 import model.operation.ArithmeticOperator;
 import model.operation.OperatorHandler;
@@ -31,17 +32,17 @@ public class ArithmeticExpression implements Expression {
     }
 
     @Override
-    public Value evaluate(IMap<String, Value> valueTable) throws CustomException {
-        var leftOperand = getIntValue(this.leftOperand, valueTable);
-        var rightOperand = getIntValue(this.rightOperand, valueTable);
+    public Value evaluate(IMap<String, Value> valueTable, IHeap heap) throws CustomException {
+        var leftOperand = getIntValue(this.leftOperand, valueTable, heap);
+        var rightOperand = getIntValue(this.rightOperand, valueTable, heap);
 
         return operationHandler.get(operator).handle(leftOperand, rightOperand);
     }
 
-    private IntValue getIntValue(Expression expression, IMap<String, Value> valueTable) throws CustomException {
-        var v = expression.evaluate(valueTable);
+    private IntValue getIntValue(Expression expression, IMap<String, Value> valueTable, IHeap heap) throws CustomException {
+        var v = expression.evaluate(valueTable, heap);
 
-        if (!v.getType().equals(IntType.class)) {
+        if (!v.getType().equals(new IntType())) {
             throw new CustomException(String.format("operand %s is not an integer", v));
         }
 

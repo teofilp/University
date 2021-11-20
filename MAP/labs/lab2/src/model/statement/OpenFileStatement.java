@@ -22,7 +22,7 @@ public class OpenFileStatement implements Statement {
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
         var fileTable = state.getFileTable();
-        var result = expression.evaluate(state.getSymbolTable());
+        var result = expression.evaluate(state.getSymbolTable(), state.getHeap());
         var value = getStringValue(result);
 
         addFile(fileTable, value);
@@ -43,7 +43,7 @@ public class OpenFileStatement implements Statement {
     }
 
     private String getStringValue(Value value) throws CustomException {
-        if (!value.getType().equals(StringType.class)) {
+        if (!value.getType().equals(new StringType())) {
             throw new CustomException("Expression has to be of type string");
         }
 

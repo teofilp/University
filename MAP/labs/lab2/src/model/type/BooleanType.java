@@ -10,8 +10,8 @@ public class BooleanType implements Type {
     }
 
     @Override
-    public boolean equals(Class type) {
-        return type.equals(getClass());
+    public boolean equals(Object type) {
+        return type.getClass().equals(getClass());
     }
 
     @Override

@@ -9,4 +9,5 @@ public interface IMap<K, V> extends Cloneable<IMap<K, V>> {
     void remove(K key);
     String toString(boolean withValues);
     Collection<V> getValues();
+    Collection<K> getKeys();
 }

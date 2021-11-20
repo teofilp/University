@@ -1,6 +1,7 @@
 package model.statement;
 
 import model.CustomException;
+import model.IHeap;
 import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
@@ -21,16 +22,16 @@ public class ConditionalStatement implements Statement {
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
         var symbolTable = state.getSymbolTable();
-        var conditionHolds = getBooleanValue(symbolTable);
+        var conditionHolds = getBooleanValue(symbolTable, state.getHeap());
 
         state.pushStatement(conditionHolds.getValue() ? trueStatement : falseStatement);
         return state;
     }
 
-    private BooleanValue getBooleanValue(IMap<String, Value> symbolTable) throws CustomException {
-        var conditionValue = condition.evaluate(symbolTable);
+    private BooleanValue getBooleanValue(IMap<String, Value> symbolTable, IHeap heap) throws CustomException {
+        var conditionValue = condition.evaluate(symbolTable, heap);
 
-        if (!conditionValue.getType().equals(BooleanType.class)) {
+        if (!conditionValue.getType().equals(new BooleanType())) {
             throw new CustomException("Conditional expression is not of type boolean!");
         }
 

@@ -21,7 +21,7 @@ public class CloseFileStatement implements Statement {
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
         var fileTable = state.getFileTable();
-        var result = expression.evaluate(state.getSymbolTable());
+        var result = expression.evaluate(state.getSymbolTable(), state.getHeap());
         var fileName = getStringValue(result);
 
         removeFile(fileTable, fileName);
@@ -44,7 +44,7 @@ public class CloseFileStatement implements Statement {
     }
 
     private String getStringValue(Value value) throws CustomException {
-        if (!value.getType().equals(StringType.class)) {
+        if (!value.getType().equals(new StringType())) {
             throw new CustomException("Expression has to be of type string");
         }
 

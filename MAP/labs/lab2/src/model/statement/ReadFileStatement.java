@@ -25,7 +25,7 @@ public class ReadFileStatement implements Statement {
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
         var fileTable = state.getFileTable();
-        var result = expression.evaluate(state.getSymbolTable());
+        var result = expression.evaluate(state.getSymbolTable(), state.getHeap());
         var fileName = getStringValue(result);
         var number = readNumber(fileTable, fileName);
 
@@ -41,7 +41,7 @@ public class ReadFileStatement implements Statement {
 
         Value value = symbolTable.get(id);
 
-        if (!value.getType().equals(IntType.class)) {
+        if (!value.getType().equals(new IntType())) {
             throw new CustomException(String.format("Variable %s has to be of type Int", id));
         }
 
@@ -74,7 +74,7 @@ public class ReadFileStatement implements Statement {
     }
 
     private String getStringValue(Value value) throws CustomException {
-        if (!value.getType().equals(StringType.class)) {
+        if (!value.getType().equals(new StringType())) {
             throw new CustomException("Expression has to be of type string");
         }
 

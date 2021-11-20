@@ -3,10 +3,10 @@ package model.type;
 import model.value.StringValue;
 import model.value.Value;
 
-public class StringType implements Type{
+public class StringType implements Type {
     @Override
-    public boolean equals(Class c) {
-        return getClass().equals(c);
+    public boolean equals(Object c) {
+        return getClass().equals(c.getClass());
     }
 
     @Override
