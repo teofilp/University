@@ -45,6 +45,8 @@ public class ExecutionController {
     }
 
     private void collectGarbage(ProgramState state) {
+        // incomplete: should also look at each value referenced by the available heap values so that I dont delete
+        // them by mistake
         var usedAddresses = Stream.of(
                         getUsedAddresses(state.getSymbolTable()),
                         getUsedAddresses(state.getHeap().getMap())
