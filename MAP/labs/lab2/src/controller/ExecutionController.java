@@ -2,11 +2,13 @@ package controller;
 
 import model.*;
 import model.statement.Statement;
+import model.type.ReferenceType;
 import model.value.ReferenceValue;
 import model.value.Value;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Queue;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -44,12 +46,12 @@ public class ExecutionController {
         return state;
     }
 
-    private void collectGarbage(ProgramState state) {
+    private void collectGarbage(ProgramState state) throws CustomException {
         // incomplete: should also look at each value referenced by the available heap values so that I dont delete
         // them by mistake
         var usedAddresses = Stream.of(
                         getUsedAddresses(state.getSymbolTable()),
-                        getUsedAddresses(state.getHeap().getMap())
+                        getHeapUsedAddresses(state.getSymbolTable(), state.getHeap())
                 )
                 .flatMap(x -> x)
                 .collect(Collectors.toList());
@@ -70,6 +72,29 @@ public class ExecutionController {
         return hashMap.getValues().stream().filter(x -> x instanceof ReferenceValue)
                 .map(x -> (ReferenceValue)x)
                 .map(ReferenceValue::getAddress);
+    }
+
+    private Stream<Integer> getHeapUsedAddresses(IMap<String, Value> symbolTable, IHeap heap) throws CustomException {
+        ArrayList<Integer> usedAddresses = new ArrayList<>();
+        ArrayList<ReferenceValue> list = new ArrayList<>(
+                symbolTable.getValues().stream().filter(x -> x instanceof ReferenceValue)
+                .map(x -> (ReferenceValue)x)
+                        .collect(Collectors.toCollection(ArrayList::new))
+        );
+
+        while (list.size() > 0) {
+            var first = list.remove(0);
+
+            if (first.getAddress() == ReferenceValue.NULL_ADDRESS) continue;
+
+            usedAddresses.add(first.getAddress());
+
+            if (first.getInnerType() instanceof ReferenceType) {
+                list.add((ReferenceValue) heap.get(first.getAddress()));
+            }
+        }
+
+        return usedAddresses.stream();
     }
 
     private void logState(ProgramState state, IRepository<ProgramState> states) throws IOException {

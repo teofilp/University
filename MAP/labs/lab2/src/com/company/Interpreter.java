@@ -30,6 +30,7 @@ public class Interpreter {
         add(example5());
         add(example6());
         add(example7());
+        add(example8());
     }};
 
     public static void main(String[] args) throws CustomException, IOException {
@@ -261,6 +262,46 @@ public class Interpreter {
                 new Map<>(),
                 new Heap(),
                 c3
+        );
+    }
+
+    private static ProgramState example8() {
+        // Ref ref ref int v;
+        // ref ref int w;
+        // ref int x;
+        // new(x, 3)
+        // new (w, x)
+        // new (v, w)
+        // new (x, 4)
+        // new (x, 5)
+        // readHeap(readHeap(readHeap(v))))
+        var s1 = new DeclarationStatement("v", new ReferenceType(new ReferenceType(new ReferenceType(new IntType()))));
+        var s2 = new DeclarationStatement("w", new ReferenceType(new ReferenceType(new IntType())));
+        var s3 = new DeclarationStatement("x", new ReferenceType(new IntType()));
+        var s4 = new NewReferenceStatement("x", new ConstantExpression(new IntValue(3)));
+        var s5 = new NewReferenceStatement("w", new VariableExpression("x"));
+        var s6 = new NewReferenceStatement("v", new VariableExpression("w"));
+        var s7 = new NewReferenceStatement("x", new ConstantExpression(new IntValue(4)));
+        var e1 = new ReadHeapExpression(new ReadHeapExpression(new ReadHeapExpression(new VariableExpression("v"))));
+        var s8 = new PrintStatement(e1);
+        var s9 = new NewReferenceStatement("x", new ConstantExpression(new IntValue(5)));
+
+        var c1 = new CompoundStatement(s1, s2);
+        var c2 = new CompoundStatement(c1, s3);
+        var c3 = new CompoundStatement(c2, s4);
+        var c4 = new CompoundStatement(c3, s5);
+        var c5 = new CompoundStatement(c4, s6);
+        var c6 = new CompoundStatement(c5, s7);
+        var c7 = new CompoundStatement(c6, s8);
+        var c8 = new CompoundStatement(c7, s9);
+
+        return new ProgramState(
+                new Stack<>(),
+                new Map<>(),
+                new List<>(),
+                new Map<>(),
+                new Heap(),
+                c8
         );
     }
 
