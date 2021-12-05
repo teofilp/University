@@ -25,7 +25,7 @@ public class TextMenu {
         }
     }
 
-    public void run() throws CustomException, IOException {
+    public void run() throws CustomException, IOException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             printMenu();

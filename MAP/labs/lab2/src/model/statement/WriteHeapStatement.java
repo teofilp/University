@@ -25,7 +25,7 @@ public class WriteHeapStatement implements Statement {
             throw new CustomException(String.format("Cannot assign %s to %s", expressionResult.getType(), refValue.getInnerType()));
 
         state.getHeap().set(refValue.getAddress(), expressionResult);
-        return state;
+        return null;
     }
 
     private ReferenceValue getRefValue(IMap<String, Value> symbolTable) throws CustomException {

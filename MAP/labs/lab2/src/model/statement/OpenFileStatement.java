@@ -27,7 +27,7 @@ public class OpenFileStatement implements Statement {
 
         addFile(fileTable, value);
 
-        return state;
+        return null;
     }
 
     private void addFile(IMap<String, BufferedReader> fileTable, String fileName) throws CustomException {

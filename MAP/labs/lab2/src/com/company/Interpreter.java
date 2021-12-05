@@ -31,9 +31,10 @@ public class Interpreter {
         add(example6());
         add(example7());
         add(example8());
+        add(example9());
     }};
 
-    public static void main(String[] args) throws CustomException, IOException {
+    public static void main(String[] args) throws CustomException, IOException, InterruptedException {
         var textMenu = new TextMenu();
         textMenu.addCommand(new ExitCommand("0", "Exit"));
         examples.getStream().forEach((x) -> addExample(x, textMenu));
@@ -65,7 +66,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c2
         );
@@ -110,7 +111,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c4
         );
@@ -143,7 +144,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c4
         );
@@ -174,7 +175,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c8
         );
@@ -200,7 +201,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c4
         );
@@ -228,7 +229,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c5
         );
@@ -259,7 +260,7 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c3
         );
@@ -299,9 +300,47 @@ public class Interpreter {
                 new Stack<>(),
                 new Map<>(),
                 new List<>(),
-                new Map<>(),
+                new ConcurrentMap<>(),
                 new Heap(),
                 c8
+        );
+    }
+
+    private static  ProgramState example9() {
+        var s1 = new DeclarationStatement("v", new IntType());
+        var s2 = new DeclarationStatement("a", new ReferenceType(new IntType()));
+        var s3 = new AssignmentStatement("v", new ConstantExpression(new IntValue(10)));
+        var s4 = new NewReferenceStatement("a", new ConstantExpression(new IntValue(22)));
+
+        var s5 = new WriteHeapStatement("a", new ConstantExpression(new IntValue(30)));
+        var s6 = new AssignmentStatement("v", new ConstantExpression(new IntValue(32)));
+        var s7 = new PrintStatement(new VariableExpression("v"));
+        var s8 = new PrintStatement(new ReadHeapExpression(new VariableExpression("a")));
+
+        var c1 = new CompoundStatement(s1, s2);
+        var c2 = new CompoundStatement(c1, s3);
+        var c3 = new CompoundStatement(c2, s4); // int v; Ref int a; v = 10; new(a, 22)
+
+        var c5 = new CompoundStatement(s5, s6);
+        var c6 = new CompoundStatement(c5, s7);
+        var c7 = new CompoundStatement(c6, s8);
+
+        var s9 = new RunParallelStatement(c7); // fork part
+
+        var s10 = new PrintStatement(new VariableExpression("v"));
+        var s11 = new PrintStatement(new ReadHeapExpression(new VariableExpression("a")));
+
+        var c8 = new CompoundStatement(c3, s9);
+        var c9 = new CompoundStatement(c8, s10);
+        var c10 = new CompoundStatement(c9, s11);
+
+        return new ProgramState(
+                new Stack<>(),
+                new Map<>(),
+                new List<>(),
+                new ConcurrentMap<>(),
+                new Heap(),
+                c10
         );
     }
 

@@ -28,7 +28,8 @@ public class AssignmentStatement implements Statement {
         }
 
         symbolTable.put(id, newValue);
-        return state;
+
+        return null;
     }
 
     @Override

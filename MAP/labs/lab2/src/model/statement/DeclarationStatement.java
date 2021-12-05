@@ -27,7 +27,7 @@ public class DeclarationStatement implements Statement {
 
         symbolTable.put(id, type.getDefaultValue());
 
-        return state;
+        return null;
     }
 
     @Override

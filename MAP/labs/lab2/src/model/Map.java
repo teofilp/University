@@ -3,6 +3,7 @@ package model;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 public class Map<K, V> implements IMap<K, V> {
     private final HashMap<K, V> map;
@@ -49,6 +50,11 @@ public class Map<K, V> implements IMap<K, V> {
     @Override
     public Collection<V> getValues() {
         return map.values();
+    }
+
+    @Override
+    public Stream<V> getStreamValues() {
+        return map.values().stream();
     }
 
     @Override

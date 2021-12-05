@@ -21,7 +21,7 @@ public class PrintStatement implements Statement {
 
         output.add(expression.evaluate(symbolTable, state.getHeap()));
 
-        return state;
+        return null;
     }
 
     @Override

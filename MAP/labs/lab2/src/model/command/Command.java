@@ -12,7 +12,7 @@ public abstract class Command {
         this.description = description;
     }
 
-    public abstract void execute() throws CustomException, IOException;
+    public abstract void execute() throws CustomException, IOException, InterruptedException;
 
     public String getKey() {
         return key;

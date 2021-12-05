@@ -42,6 +42,29 @@ public class Repository<T extends Cloneable<T>> implements IRepository<T> {
     }
 
     @Override
+    public void log(T item) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+            writer.append(item.toString());
+        }
+    }
+
+    @Override
+    public IList<T> getItems() {
+        return data;
+    }
+
+    @Override
+    public void setItems(IList<T> newItems) {
+        data.clear();
+        newItems.getStream().forEach(x -> data.add(x));
+    }
+
+    @Override
+    public int size() {
+        return data.size();
+    }
+
+    @Override
     public IRepository<T> clone() {
         return new Repository<T>(data, fileName);
     }

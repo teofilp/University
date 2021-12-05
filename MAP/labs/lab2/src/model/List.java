@@ -1,11 +1,10 @@
 package model;
 
-import model.IList;
-
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class List<T> implements IList<T> {
+public class List<T extends Cloneable> implements IList<T>{
     private final java.util.ArrayList<T> list;
 
     public List() {
@@ -13,7 +12,8 @@ public class List<T> implements IList<T> {
     }
 
     public List(ArrayList<T> old) {
-        list = (ArrayList<T>) old.clone();
+        this();
+        list.addAll(old);
     }
 
     @Override
@@ -32,6 +32,16 @@ public class List<T> implements IList<T> {
     }
 
     @Override
+    public void clear() {
+        list.clear();
+    }
+
+    @Override
+    public int size() {
+        return list.size();
+    }
+
+    @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder().append("[ ");
 
@@ -44,6 +54,8 @@ public class List<T> implements IList<T> {
 
     @Override
     public IList<T> clone() {
-        return new List<T>(list);
+        ArrayList<T> arr = new ArrayList<>();
+        list.forEach(x -> arr.add((T) x.clone()));
+        return new List<T>(arr);
     }
 }

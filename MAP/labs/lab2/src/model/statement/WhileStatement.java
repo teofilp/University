@@ -24,7 +24,7 @@ public class WhileStatement implements Statement {
             executionStack.push(statement);
         }
 
-        return state;
+        return null;
     }
 
     private BooleanValue getConditionalExpressionResult(ProgramState state) throws CustomException {

@@ -25,7 +25,7 @@ public class ConditionalStatement implements Statement {
         var conditionHolds = getBooleanValue(symbolTable, state.getHeap());
 
         state.pushStatement(conditionHolds.getValue() ? trueStatement : falseStatement);
-        return state;
+        return null;
     }
 
     private BooleanValue getBooleanValue(IMap<String, Value> symbolTable, IHeap heap) throws CustomException {

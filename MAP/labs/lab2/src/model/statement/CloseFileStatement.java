@@ -26,7 +26,7 @@ public class CloseFileStatement implements Statement {
 
         removeFile(fileTable, fileName);
 
-        return state;
+        return null;
     }
 
     private void removeFile(IMap<String, BufferedReader> fileTable, String fileName) throws CustomException {

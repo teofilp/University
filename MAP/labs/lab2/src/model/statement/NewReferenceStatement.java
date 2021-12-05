@@ -27,7 +27,7 @@ public class NewReferenceStatement implements Statement {
         var address = state.getHeap().allocate(expressionResult);
         state.getSymbolTable().put(id, new ReferenceValue(refValue.getInnerType(), address));
 
-        return state;
+        return null;
     }
 
     private ReferenceValue getRefValue(IMap<String, Value> symbolTable) throws CustomException {

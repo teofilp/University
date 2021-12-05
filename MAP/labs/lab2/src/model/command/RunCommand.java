@@ -14,7 +14,7 @@ public class RunCommand extends Command{
     }
 
     @Override
-    public void execute() throws CustomException, IOException {
-        controller.runAll();
+    public void execute() throws CustomException, IOException, InterruptedException {
+        controller.runAllV2();
     }
 }

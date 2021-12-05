@@ -31,7 +31,7 @@ public class ReadFileStatement implements Statement {
 
         updateVariable(number, state.getSymbolTable());
 
-        return state;
+        return null;
     }
 
     private void updateVariable(Value number, IMap<String, Value> symbolTable) throws CustomException {

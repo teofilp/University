@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Collection;
+import java.util.stream.Stream;
 
 public interface IMap<K, V> extends Cloneable<IMap<K, V>> {
     V get(K key);
@@ -9,5 +10,6 @@ public interface IMap<K, V> extends Cloneable<IMap<K, V>> {
     void remove(K key);
     String toString(boolean withValues);
     Collection<V> getValues();
+    Stream<V> getStreamValues();
     Collection<K> getKeys();
 }
