@@ -2,6 +2,7 @@ package model.expression;
 
 import model.IHeap;
 import model.IMap;
+import model.type.Type;
 import model.value.Value;
 
 
@@ -15,6 +16,11 @@ public class VariableExpression implements Expression {
     @Override
     public Value evaluate(IMap<String, Value> valueTable, IHeap heap) {
         return valueTable.get(id);
+    }
+
+    @Override
+    public Type typecheck(IMap<String, Type> typeEnv) {
+        return typeEnv.get(id);
     }
 
     @Override

@@ -6,6 +6,7 @@ import model.IMap;
 import model.operation.ArithmeticOperator;
 import model.operation.OperatorHandler;
 import model.type.IntType;
+import model.type.Type;
 import model.value.IntValue;
 import model.value.Value;
 
@@ -37,6 +38,17 @@ public class ArithmeticExpression implements Expression {
         var rightOperand = getIntValue(this.rightOperand, valueTable, heap);
 
         return operationHandler.get(operator).handle(leftOperand, rightOperand);
+    }
+
+    @Override
+    public Type typecheck(IMap<String, Type> typeEnv) throws CustomException {
+        var leftType = leftOperand.typecheck(typeEnv);
+        var rightType = rightOperand.typecheck(typeEnv);
+
+        if (!leftType.equals(new IntType())) throw new CustomException("Left operand is not an integer");
+        if (!rightType.equals(new IntType())) throw new CustomException("Right operand is not an integer");
+
+        return new IntType();
     }
 
     private IntValue getIntValue(Expression expression, IMap<String, Value> valueTable, IHeap heap) throws CustomException {

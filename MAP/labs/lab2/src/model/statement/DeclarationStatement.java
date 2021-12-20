@@ -31,6 +31,11 @@ public class DeclarationStatement implements Statement {
     }
 
     @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        typeEnv.put(id, type);
+    }
+
+    @Override
     public String toString() {
         return String.format("%s %s", type, id);
     }

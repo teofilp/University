@@ -3,6 +3,8 @@ package model.expression;
 import model.CustomException;
 import model.IHeap;
 import model.IMap;
+import model.type.ReferenceType;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.Value;
 
@@ -22,6 +24,14 @@ public class ReadHeapExpression implements Expression {
         int address = ((ReferenceValue) expressionResult).getAddress();
 
         return heap.get(address);
+    }
+
+    @Override
+    public Type typecheck(IMap<String, Type> typeEnv) throws CustomException {
+        var type = expression.typecheck(typeEnv);
+        if (!(type instanceof ReferenceType)) throw new CustomException("The argument of ReadHeap is not of type ReferenceType");
+
+        return ((ReferenceType)type).getInnerType();
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Heap implements IHeap {
     private int nextAvailableAddress = 1;
 
     public Heap() {
-        this.hashMap = new Map<>();
+        this.hashMap = new ConcurrentMap<>();
     }
 
     public Heap(IMap<Integer, Value> hashMap) { this.hashMap = hashMap; }

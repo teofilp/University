@@ -22,7 +22,7 @@ getNext([E|_], R):- R is E + 1.
 % execute(N - number, l1l2...ln - list, Rem - number)
 %   - L, Rem = 0
 %   - execute(N, generateMain(N) U [], Rem - generateMain(N)), if n = 0
-%   - execute(N, getNext(l1l2..ln) U l1l2...ln, NewRem - getNext(l1l2...ln)), otherwise
+%   - execute(N, getNext(l1l2..ln) U l1l2...ln, Rem - getNext(l1l2...ln)), otherwise
 execute(_, L, 0, L).
 
 execute(N, [], Rem, R):- 

@@ -1,8 +1,11 @@
 package model.statement;
 
 import model.CustomException;
+import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
+import model.type.BooleanType;
+import model.type.Type;
 import model.value.BooleanValue;
 
 public class WhileStatement implements Statement {
@@ -25,6 +28,15 @@ public class WhileStatement implements Statement {
         }
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var expressionType = expression.typecheck(typeEnv);
+
+        if (!expressionType.equals(new BooleanType())) throw new CustomException("Expression must be of type boolean");
+
+        statement.typeCheck(typeEnv);
     }
 
     private BooleanValue getConditionalExpressionResult(ProgramState state) throws CustomException {

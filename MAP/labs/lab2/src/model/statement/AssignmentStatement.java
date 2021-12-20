@@ -1,8 +1,10 @@
 package model.statement;
 
 import model.CustomException;
+import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
+import model.type.Type;
 
 public class AssignmentStatement implements Statement {
     private final String id;
@@ -30,6 +32,14 @@ public class AssignmentStatement implements Statement {
         symbolTable.put(id, newValue);
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var varType = typeEnv.get(id);
+        var expressionType = expression.typecheck(typeEnv);
+
+        if (!varType.equals(expressionType)) throw new CustomException("Lefthand side operand has different type from righthand side");
     }
 
     @Override

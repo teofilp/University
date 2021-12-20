@@ -1,7 +1,10 @@
 package model.statement;
 
+import model.CustomException;
+import model.IMap;
 import model.IStack;
 import model.ProgramState;
+import model.type.Type;
 
 public class CompoundStatement implements Statement {
     private Statement first;
@@ -20,6 +23,12 @@ public class CompoundStatement implements Statement {
         executionStack.push(first);
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        first.typeCheck(typeEnv);
+        second.typeCheck(typeEnv);
     }
 
     @Override

@@ -1,7 +1,9 @@
 package model.expression;
 
+import model.CustomException;
 import model.IHeap;
 import model.IMap;
+import model.type.Type;
 import model.value.Value;
 
 public class ConstantExpression implements Expression {
@@ -14,6 +16,11 @@ public class ConstantExpression implements Expression {
     @Override
     public Value evaluate(IMap<String, Value> valueTable, IHeap heap)  {
         return value;
+    }
+
+    @Override
+    public Type typecheck(IMap<String, Type> typeEnv) {
+        return value.getType();
     }
 
     @Override

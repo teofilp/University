@@ -4,6 +4,8 @@ import model.CustomException;
 import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
+import model.type.ReferenceType;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.Value;
 
@@ -28,6 +30,14 @@ public class NewReferenceStatement implements Statement {
         state.getSymbolTable().put(id, new ReferenceValue(refValue.getInnerType(), address));
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var variableType = typeEnv.get(id);
+        var expressionType = expression.typecheck(typeEnv);
+
+        if (!variableType.equals(new ReferenceType(expressionType))) throw new CustomException("variable type does not match right hand side expression");
     }
 
     private ReferenceValue getRefValue(IMap<String, Value> symbolTable) throws CustomException {

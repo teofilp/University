@@ -6,6 +6,7 @@ import model.ProgramState;
 import model.expression.Expression;
 import model.type.IntType;
 import model.type.StringType;
+import model.type.Type;
 import model.value.IntValue;
 import model.value.StringValue;
 import model.value.Value;
@@ -32,6 +33,12 @@ public class ReadFileStatement implements Statement {
         updateVariable(number, state.getSymbolTable());
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var variableType = typeEnv.get(id);
+        if (!variableType.equals(new IntType())) throw new CustomException("Variable must be of type int");
     }
 
     private void updateVariable(Value number, IMap<String, Value> symbolTable) throws CustomException {

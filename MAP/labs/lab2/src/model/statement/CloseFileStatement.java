@@ -5,6 +5,7 @@ import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
 import model.type.StringType;
+import model.type.Type;
 import model.value.StringValue;
 import model.value.Value;
 
@@ -27,6 +28,11 @@ public class CloseFileStatement implements Statement {
         removeFile(fileTable, fileName);
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        if (!expression.typecheck(typeEnv).equals(new StringType())) throw new CustomException("Expression must be of type string");
     }
 
     private void removeFile(IMap<String, BufferedReader> fileTable, String fileName) throws CustomException {

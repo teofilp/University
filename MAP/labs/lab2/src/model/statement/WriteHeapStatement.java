@@ -4,6 +4,8 @@ import model.CustomException;
 import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
+import model.type.ReferenceType;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.Value;
 
@@ -26,6 +28,14 @@ public class WriteHeapStatement implements Statement {
 
         state.getHeap().set(refValue.getAddress(), expressionResult);
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var variableType = typeEnv.get(id);
+        var expressionType = expression.typecheck(typeEnv);
+
+        if (!variableType.equals(new ReferenceType(expressionType))) throw new CustomException("Cannot assign to ref value rhs");
     }
 
     private ReferenceValue getRefValue(IMap<String, Value> symbolTable) throws CustomException {

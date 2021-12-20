@@ -36,7 +36,14 @@ public class ExecutionController {
         return state;
     }
 
+    public void typeCheck(IStack<Statement> executionStack) throws CustomException {
+        var st = executionStack.pop();
+        st.typeCheck(new Map<>());
+        executionStack.push(st);
+    }
+
     public void runAllV2() throws InterruptedException, CustomException {
+        typeCheck(programStates.getItems().getStream().findFirst().get().getExecutionStack());
         var executor = Executors.newFixedThreadPool(2);
         var oldItems = programStates.getItems().clone(); // used to come to old version to be able to rerun
         var list = removeCompletedPrograms(programStates.getItems());

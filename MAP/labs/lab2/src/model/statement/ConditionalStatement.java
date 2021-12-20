@@ -6,6 +6,7 @@ import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
 import model.type.BooleanType;
+import model.type.Type;
 import model.value.BooleanValue;
 import model.value.Value;
 
@@ -26,6 +27,16 @@ public class ConditionalStatement implements Statement {
 
         state.pushStatement(conditionHolds.getValue() ? trueStatement : falseStatement);
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        var expressionType = condition.typecheck(typeEnv);
+
+        if (!expressionType.equals(new BooleanType())) throw new CustomException("Expression must be of type boolean");
+
+        trueStatement.typeCheck(typeEnv.clone());
+        falseStatement.typeCheck(typeEnv.clone());
     }
 
     private BooleanValue getBooleanValue(IMap<String, Value> symbolTable, IHeap heap) throws CustomException {

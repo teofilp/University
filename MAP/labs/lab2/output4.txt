@@ -2286,3 +2286,383 @@ Output
  --------------------
 [ 15, 50,  ]
  --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc | readFile(varf, varc) | print ( varc ) | readFile(varf, varc) | print ( varc ) | closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc | readFile(varf, varc) | print ( varc ) | readFile(varf, varc) | print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc | readFile(varf, varc) | print ( varc ) | readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc | readFile(varf, varc) | print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc | readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) | int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" | openFile(varf) ||| int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf | varf = "test.txt" ||| openFile(varf) ||| int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+String varf ||| varf = "test.txt" ||| openFile(varf) ||| int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "",  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+varf = "test.txt" ||| openFile(varf) ||| int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt",  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+openFile(varf) ||| int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt",  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+int varc ||| readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt", varc: 0,  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+readFile(varf, varc) ||| print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt", varc: 15,  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+print ( varc ) ||| readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt", varc: 15,  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+readFile(varf, varc) ||| print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[ 15,  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt", varc: 50,  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+print ( varc ) ||| closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[ 15,  ]
+ --------------------
+Program State #4
+ --------------------
+Symbol Table
+ --------------------
+{ varf: "test.txt", varc: 50,  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+ 
+ test.txt
+ --------------------
+Execution Stack
+ --------------------
+closeFile(varf) ||| 
+ --------------------
+Output
+ --------------------
+[ 15, 50,  ]
+ --------------------

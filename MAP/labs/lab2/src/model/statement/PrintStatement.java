@@ -5,6 +5,7 @@ import model.IList;
 import model.IMap;
 import model.ProgramState;
 import model.expression.Expression;
+import model.type.Type;
 import model.value.Value;
 
 public class PrintStatement implements Statement {
@@ -22,6 +23,11 @@ public class PrintStatement implements Statement {
         output.add(expression.evaluate(symbolTable, state.getHeap()));
 
         return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+        expression.typecheck(typeEnv);
     }
 
     @Override

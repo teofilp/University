@@ -6,6 +6,7 @@ import model.IMap;
 import model.operation.LogicalOperator;
 import model.operation.OperatorHandler;
 import model.type.BooleanType;
+import model.type.Type;
 import model.value.BooleanValue;
 import model.value.Value;
 
@@ -31,6 +32,17 @@ public class LogicalExpression implements Expression {
         var rightValue = getBoolValue(right, symbolTable, heap);
 
         return map.get(operator).handle(leftValue, rightValue);
+    }
+
+    @Override
+    public Type typecheck(IMap<String, Type> typeEnv) throws CustomException {
+        var leftType = left.typecheck(typeEnv);
+        var rightType = right.typecheck(typeEnv);
+
+        if (!leftType.equals(new BooleanType())) throw new CustomException("Left operand is not of type boolean");
+        if (!rightType.equals(new BooleanType())) throw new CustomException("Right operand is not of type boolean");
+
+        return new BooleanType();
     }
 
     private BooleanValue getBoolValue(Expression expression, IMap<String, Value> symbolTable, IHeap heap) throws CustomException {
