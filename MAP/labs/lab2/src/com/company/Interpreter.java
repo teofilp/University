@@ -22,7 +22,7 @@ import java.io.IOException;
 
 public class Interpreter {
 
-    private static final List<ProgramState> examples = new List<>() {{
+    public static final List<ProgramState> examples = new List<>() {{
         add(example1());
         add(example2());
         add(example3());

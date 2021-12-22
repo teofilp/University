@@ -81,6 +81,10 @@ public class ProgramState implements Cloneable<ProgramState> {
                 .toString();
     }
 
+    public int getId() {
+        return id;
+    }
+
     public IMap<String, BufferedReader> getFileTable() {
         return fileTable;
     }

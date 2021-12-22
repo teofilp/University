@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.IntStream;
 
-public class Stack<T> implements IStack<T> {
+public class Stack<T extends Cloneable<T>> implements IStack<T> {
     private final java.util.Stack<T> stack;
 
     public Stack() {
@@ -41,6 +41,17 @@ public class Stack<T> implements IStack<T> {
         }
 
         return builder.toString();
+    }
+
+    @Override
+    public IList<T> getItems() {
+        var list = new List<T>();
+        var end = stack.size();
+        var indexes = IntStream.range(0, end).map(i -> end - i - 1).toArray();
+        for (var index: indexes) {
+            list.add(stack.get(index));
+        }
+        return list;
     }
 
     @Override

@@ -15,9 +15,19 @@ import java.util.stream.Stream;
 
 public class ExecutionController {
     private IRepository<ProgramState> programStates;
+    private OnUpdateHandler updateHandler;
+    private IList<ProgramState> clonedStates;
 
     public ExecutionController(IRepository<ProgramState> programStates) {
         this.programStates = programStates;
+    }
+
+    public ExecutionController(IRepository<ProgramState> programStates, OnUpdateHandler updateHandler) throws CustomException {
+        this(programStates);
+        this.updateHandler = updateHandler;
+        this.clonedStates = programStates.getItems().clone();
+        typeCheck(clonedStates.getStream().findFirst().get().getExecutionStack());
+        updateHandler.onUpdate(clonedStates);
     }
 
     public ProgramState runAll() throws CustomException, IOException {
@@ -58,6 +68,37 @@ public class ExecutionController {
 
         executor.shutdownNow();
         programStates.setItems(oldItems);
+    }
+
+    public void runOnce() throws CustomException, InterruptedException {
+        var executor = Executors.newFixedThreadPool(2);
+        var list = removeCompletedPrograms(clonedStates);
+        list.getStream().forEach(System.out::println);
+
+        runOnceForAllGui(executor, list);
+        list.getStream().forEach(System.out::println);
+        list = removeCompletedPrograms(clonedStates);
+        collectGarbage(list);
+
+        updateHandler.onUpdate(clonedStates);
+
+        executor.shutdownNow();
+    }
+
+    private void runOnceForAllGui(ExecutorService executor, IList<ProgramState> states) throws InterruptedException {
+        states.getStream().forEach(this::logStates);
+
+        ArrayList<Callable<ProgramState>> callables = states.getStream()
+                .map(x -> (Callable<ProgramState>)(x::runOne))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        ArrayList<ProgramState> newStates = executor.invokeAll(callables).stream()
+                .map(this::tryGetProgramState)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        newStates.forEach(states::add);
+        clonedStates = states;
     }
 
     private void runOnceForAll(ExecutorService executor, IList<ProgramState> states) throws InterruptedException {
@@ -147,5 +188,9 @@ public class ExecutionController {
         try {
             programStates.log(state);
         } catch (IOException ex) {}
+    }
+
+    public void triggerUpdate() {
+        updateHandler.onUpdate(clonedStates);
     }
 }
