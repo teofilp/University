@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          prefHeight="400.0" prefWidth="1200.0" minWidth="1200" alignment="CENTER">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Program States">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </Label>
+    <TextField disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="activeStates"/>
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="2" fx:id="selectedThreadIdLb"/>
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Heap" GridPane.columnSpan="12">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </Label>
+    <TableView GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="12" fx:id="heapTV">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </TableView>
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="12" text="Out" GridPane.columnSpan="12"/>
+    <ListView GridPane.rowIndex="2" GridPane.columnIndex="12" GridPane.columnSpan="12" fx:id="outLV"/>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="File Table" GridPane.columnSpan="12">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </Label>
+    <ListView GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="12" fx:id="fileTableLV">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </ListView>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="12" text="Program State IDs" GridPane.columnSpan="12"/>
+    <ListView GridPane.rowIndex="4" GridPane.columnIndex="12" GridPane.columnSpan="12" fx:id="statesIdsLV"/>
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="0" text="Symbol Table" GridPane.columnSpan="12">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </Label>
+    <TableView GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="12" fx:id="symbolTableTV">
+        <GridPane.margin>
+            <Insets right="24"/>
+        </GridPane.margin>
+    </TableView>
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="12" text="Execution Stack" GridPane.columnSpan="12"/>
+    <ListView GridPane.rowIndex="6" GridPane.columnIndex="12" GridPane.columnSpan="12" fx:id="exeStackLV"/>
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="0" text="Lock Table" GridPane.columnSpan="12"/>
+    <TableView GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="12" fx:id="lockTV"/>
+    <Button fx:id="runOnceButton" GridPane.rowIndex="9" GridPane.columnIndex="12" text="Run Once">
+        <GridPane.margin>
+            <Insets top="24"/>
+        </GridPane.margin>
+    </Button>
+</GridPane>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b779132c-7b11-481f-b9fe-9f425d759178" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DSA" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DSA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/FP" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/FP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a10-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a10-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a11-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a11-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a12-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a12-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a2-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a2-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a5-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a5-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FP/a9-913-Filp-Teodor" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FP/a9-913-Filp-Teodor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Graph_Algorithms" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Graph_Algorithms" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_17_ea_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/com/example/gui/HeapTableRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/com/example/gui/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/com/example/gui/RunProgramPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/com/example/gui/StartupPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/com/example/gui/SymbolTableRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/com/example/gui/run-program-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/com/example/gui/startup-page-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/HeapTableRow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/MainApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/RunProgramPage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/RunProgramPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/StartupPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/SymbolTableRow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/run-program-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/com/example/gui/startup-page-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/com/company/Interpreter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/com/company/Interpreter$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/com/company/Interpreter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/controller/ExecutionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/Cloneable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/ConcurrentMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/CustomException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/Heap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/IHeap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/IList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/IMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/IRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/IStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/Map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/OnUpdateHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/ProgramState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/command/ExitCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/command/RunCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/ArithmeticExpression$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/ArithmeticExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/ConstantExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/LogicalExpression$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/LogicalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/ReadHeapExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/RelationalExpression$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/RelationalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/expression/VariableExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/ArithmeticOperator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/ArithmeticOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/LogicalOperator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/LogicalOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/OperatorHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/RelationalOperator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/operation/RelationalOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/AssignmentStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/CloseFileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/CompoundStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/ConditionalStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/DeclarationStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/NewReferenceStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/NoOperationStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/OpenFileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/PrintStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/ReadFileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/RunParallelStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/Statement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/WhileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/statement/WriteHeapStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/type/BooleanType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/type/IntType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/type/ReferenceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/type/StringType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/type/Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/value/BooleanValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/value/IntValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/value/ReferenceValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/value/StringValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/model/value/Value.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/view/TextMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab2/view/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Interpreter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ExecutionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cloneable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ConcurrentMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CustomException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Heap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OnUpdateHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ProgramState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/command/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/command/ExitCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/command/RunCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/ArithmeticExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/ConstantExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/Expression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/LogicalExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/ReadHeapExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/RelationalExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/VariableExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/operation/ArithmeticOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/operation/LogicalOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/operation/OperatorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/operation/RelationalOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/AssignmentStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/CloseFileStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/CompoundStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/ConditionalStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/DeclarationStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/NewReferenceStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/NoOperationStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/OpenFileStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/PrintStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/ReadFileStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/RunParallelStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/Statement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/WhileStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/WriteHeapStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/BooleanType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/IntType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/ReferenceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/StringType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/type/Type.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/value/BooleanValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/value/IntValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/value/ReferenceValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/value/StringValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/value/Value.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TextMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOP" beforeDir="false" afterPath="$PROJECT_DIR$/../../../OOP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.fas" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.fas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PLF/labs/lisp/l2/main.lisp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1zjTGsYf1gXPS3GzSwlR98uuaUH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="openjdk-17" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Interpreter" />
+      <module name="MAP_MAIN" />
+      <option name="PROGRAM_PARAMETERS" value="--module-path $PROJECT_DIR$/../../../../JavaFX/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.fxml" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.gui.MainApplication" />
+      <module name="GUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MAP_MAIN" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MAP_MAIN" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b779132c-7b11-481f-b9fe-9f425d759178" name="Changes" comment="" />
+      <created>1634660409151</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634660409151</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/ExecutionController.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/statement/DeclarationStatement.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="model.value.IntValue" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
