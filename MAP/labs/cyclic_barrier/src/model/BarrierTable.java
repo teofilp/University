@@ -41,4 +41,13 @@ public class BarrierTable implements IBarrierTable {
     public IBarrierTable clone() {
         return new BarrierTable(map.clone());
     }
+
+    @Override
+    public String toString() {
+        return map.getKeys()
+                .stream()
+                .map(x -> String.format("%s -> (%d -> %s)", x, map.get(x).getKey(), map.get(x).getValue().stream().map(Object::toString).reduce((acc, curr) -> acc + ", " + curr).orElse("[]")))
+                .reduce((acc, curr) -> acc + "\n" + curr)
+                .orElse("n\\a");
+    }
 }
