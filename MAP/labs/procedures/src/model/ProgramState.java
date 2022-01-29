@@ -9,15 +9,17 @@ public class ProgramState implements Cloneable<ProgramState> {
     private static AtomicInteger nextId = new AtomicInteger(1);
 
     private IStack<Statement> executionStack;
-    private IMap<String, Value> symbolTable;
+    private IStack<IMap<String, Value>> symbolTable = new Stack<>();
     private IMap<String, BufferedReader> fileTable;
     private IList<Value> output;
+    private IProcedureTable procedureTable;
     private IHeap heap;
     private int id;
 
-    public ProgramState(IStack<Statement> executionStack, IMap<String, Value> symbolTable, IList<Value> output, IMap<String, BufferedReader> fileTable, IHeap heap, Statement program) {
+    public ProgramState(IStack<Statement> executionStack, IMap<String, Value> symbolTable, IList<Value> output, IMap<String, BufferedReader> fileTable, IHeap heap, Statement program, IProcedureTable procedureTable) {
         this.executionStack = executionStack;
-        this.symbolTable = symbolTable;
+        this.procedureTable = procedureTable;
+        this.symbolTable.push(symbolTable);
         this.fileTable = fileTable;
         this.output = output;
         this.heap = heap;
@@ -25,11 +27,23 @@ public class ProgramState implements Cloneable<ProgramState> {
         this.id = nextId.getAndIncrement();
     }
 
-    private ProgramState(IStack<Statement> executionStack, IMap<String, Value> symbolTable, IList<Value> output, IMap<String, BufferedReader> fileTable, IHeap heap, int id) {
+    public ProgramState(IStack<Statement> executionStack, IStack<IMap<String, Value>> symbolTable, IList<Value> output, IMap<String, BufferedReader> fileTable, IHeap heap, Statement program, IProcedureTable procedureTable) {
         this.executionStack = executionStack;
         this.symbolTable = symbolTable;
         this.fileTable = fileTable;
         this.output = output;
+        this.heap = heap;
+        this.procedureTable = procedureTable;
+        this.executionStack.push(program);
+        this.id = nextId.getAndIncrement();
+    }
+
+    private ProgramState(IStack<Statement> executionStack, IStack<IMap<String, Value>> symbolTable, IList<Value> output, IMap<String, BufferedReader> fileTable, IProcedureTable procedureTable, IHeap heap, int id) {
+        this.executionStack = executionStack;
+        this.symbolTable = symbolTable;
+        this.fileTable = fileTable;
+        this.output = output;
+        this.procedureTable = procedureTable;
         this.heap = heap;
         this.id = id;
     }
@@ -39,6 +53,12 @@ public class ProgramState implements Cloneable<ProgramState> {
     }
 
     public IMap<String, Value> getSymbolTable() {
+        var popped = symbolTable.pop();
+        symbolTable.push(popped);
+        return popped;
+    }
+
+    public IStack<IMap<String, Value>> getSymbolTables() {
         return symbolTable;
     }
 
@@ -78,6 +98,8 @@ public class ProgramState implements Cloneable<ProgramState> {
                 .append(executionStack.toString()).append(separator)
                 .append("Output").append(separator)
                 .append(output).append(separator)
+                .append("ProcedureTable").append(separator)
+                .append(procedureTable).append(separator)
                 .toString();
     }
 
@@ -91,6 +113,10 @@ public class ProgramState implements Cloneable<ProgramState> {
 
     @Override
     public ProgramState clone() {
-        return new ProgramState(executionStack.clone(), symbolTable.clone(), output.clone(), fileTable.clone(), heap.clone(), id);
+        return new ProgramState(executionStack.clone(), symbolTable.clone(), output.clone(), fileTable.clone(), procedureTable, heap.clone(), id);
+    }
+
+    public IProcedureTable getProcedureTable() {
+        return procedureTable;
     }
 }

@@ -3,4 +3,5 @@ module com.company {
     exports model;
     exports controller;
     exports model.value;
+    exports model.statement;
 }

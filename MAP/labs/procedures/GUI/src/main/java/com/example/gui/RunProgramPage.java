@@ -13,6 +13,7 @@ import javafx.util.Pair;
 import model.*;
 
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 public class RunProgramPage {
     @FXML
@@ -31,6 +32,8 @@ public class RunProgramPage {
     private Button runOnceButton;
     @FXML
     private Label selectedThreadIdLb;
+    @FXML
+    private TableView<ProcedureTableRow> procedureTV;
 
     private int selectedThreadId;
     private ExecutionController executionController;
@@ -68,7 +71,18 @@ public class RunProgramPage {
         updateFileTableListView(state);
         updateStateIdsListView(programStates);
         updateActiveStates(programStates);
+        updateProceduresTableView(state);
         updateActiveThreadId();
+    }
+
+    private void updateProceduresTableView(ProgramState state) {
+        procedureTV.getItems().setAll(state.getProcedureTable()
+                .getKeys()
+                .stream()
+                .map(x ->
+                        new ProcedureTableRow(x, state.getProcedureTable().get(x).getParameters().stream().reduce((acc, curr)-> acc + "," + curr)
+                                .orElse("n/a"), state.getProcedureTable().get(x).getStatement()))
+                .collect(Collectors.toList()));
     }
 
     private void updateActiveThreadId() {
@@ -125,7 +139,21 @@ public class RunProgramPage {
         setupStatesIdsListView();
         setupSymbolTableTableView();
         setupExeStackListView();
+        setupProcedureTableView();
         setupRunOnceButton();
+    }
+
+    private void setupProcedureTableView() {
+        var nameCol = new TableColumn("Name");
+        var parametersCol = new TableColumn("Parameters");
+        var bodyCol = new TableColumn("Body");
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        parametersCol.setCellValueFactory(new PropertyValueFactory<>("parameters"));
+        bodyCol.setCellValueFactory(new PropertyValueFactory<>("body"));
+
+        procedureTV.getColumns().setAll(nameCol, parametersCol, bodyCol);
+        procedureTV.setMaxHeight(200);
     }
 
     private void setupRunOnceButton() {

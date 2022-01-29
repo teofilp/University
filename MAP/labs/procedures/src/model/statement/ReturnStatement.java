@@ -1,2 +1,30 @@
-package model.statement;public class ReturnStatement {
+package model.statement;
+
+import model.CustomException;
+import model.IMap;
+import model.ProgramState;
+import model.type.Type;
+
+public class ReturnStatement implements Statement {
+    @Override
+    public Statement clone() {
+        return new ReturnStatement();
+    }
+
+    @Override
+    public ProgramState execute(ProgramState state) throws CustomException {
+        state.getSymbolTables().pop();
+
+        return null;
+    }
+
+    @Override
+    public void typeCheck(IMap<String, Type> typeEnv) throws CustomException {
+
+    }
+
+    @Override
+    public String toString() {
+        return "return";
+    }
 }

@@ -14,11 +14,11 @@ import model.type.ReferenceType;
 import model.type.StringType;
 import model.value.BooleanValue;
 import model.value.IntValue;
-import model.value.ReferenceValue;
 import model.value.StringValue;
 import view.TextMenu;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Interpreter {
 
@@ -32,6 +32,7 @@ public class Interpreter {
         add(example7());
         add(example8());
         add(example9());
+        add(example10());
     }};
 
     public static void main(String[] args) throws CustomException, IOException, InterruptedException {
@@ -68,8 +69,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c2
-        );
+                c2,
+                new ProcedureTable());
     }
 
     private static ProgramState example2() {
@@ -113,8 +114,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c4
-        );
+                c4,
+                new ProcedureTable());
     }
 
     private static ProgramState example3() {
@@ -146,8 +147,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c4
-        );
+                c4,
+                new ProcedureTable());
     }
 
     private static ProgramState example4() {
@@ -177,8 +178,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c8
-        );
+                c8,
+                new ProcedureTable());
     }
 
     private static ProgramState example5() {
@@ -203,8 +204,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c4
-        );
+                c4,
+                new ProcedureTable());
     }
 
     private static ProgramState example6() {
@@ -231,8 +232,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c5
-        );
+                c5,
+                new ProcedureTable());
     }
 
     private static ProgramState example7() {
@@ -262,8 +263,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c3
-        );
+                c3,
+                new ProcedureTable());
     }
 
     private static ProgramState example8() {
@@ -302,8 +303,8 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c8
-        );
+                c8,
+                new ProcedureTable());
     }
 
     private static  ProgramState example9() {
@@ -340,8 +341,73 @@ public class Interpreter {
                 new ConcurrentList<>(),
                 new ConcurrentMap<>(),
                 new Heap(),
-                c10
-        );
+                c10,
+                new ProcedureTable());
+    }
+
+    private static ProgramState example10() {
+        var params = new ArrayList<String>() {{
+            add("a");
+            add("b");
+        }};
+
+        var s1 = new AssignmentStatement("v", new ArithmeticExpression(new VariableExpression("a"), new VariableExpression("b"), ArithmeticOperator.Addition));
+        var s2 = new PrintStatement(new VariableExpression("v"));
+        var c1 = new CompoundStatement(s1, s2); // sum body
+
+        var s3 = new CreateProcedureStatement("sum", new ProcedureDefinition(params, c1)); // sum proc
+
+        var s6 = new AssignmentStatement("v", new ArithmeticExpression(new VariableExpression("a"), new VariableExpression("b"), ArithmeticOperator.Multiplication));
+        var c2 = new CompoundStatement(s6, s2); // product body
+        var s7 = new CreateProcedureStatement("product", new ProcedureDefinition(params, c2)); // product proc
+
+        // s3, s7
+
+        var s8 = new DeclarationStatement("v", new IntType());
+        var s9 = new DeclarationStatement("w", new IntType());
+        var s10 = new AssignmentStatement("v", new ConstantExpression(new IntValue(2)));
+        var s11 = new AssignmentStatement("w", new ConstantExpression(new IntValue(5)));
+
+        var s12 = new CallProcedureStatement("sum", new ArrayList<>() {{
+            add(new ArithmeticExpression(new VariableExpression("v"), new ConstantExpression(new IntValue(10)), ArithmeticOperator.Multiplication));
+            add(new VariableExpression("w"));
+        }}); // call sum(v*10, w)
+
+        var s13 = new PrintStatement(new VariableExpression("v")); // print(v)
+
+        var s14 = new CallProcedureStatement("product", new ArrayList<>() {{
+            add(new VariableExpression("v"));
+            add(new VariableExpression("w"));
+        }});
+
+        var s15 = new CallProcedureStatement("sum", new ArrayList<>() {{
+            add(new VariableExpression("v"));
+            add(new VariableExpression("w"));
+        }});
+
+        var s16 = new RunParallelStatement(s15);
+
+        var c3 = new CompoundStatement(s14, s16);
+
+        var s17 = new RunParallelStatement(c3); // fork of fork
+
+        var c4 = new CompoundStatement(s13, s17);
+        var c5 = new CompoundStatement(s12, c4);
+        var c6 = new CompoundStatement(s11, c5);
+        var c7 = new CompoundStatement(s10, c6);
+        var c8 = new CompoundStatement(s9, c7);
+        var c9 = new CompoundStatement(s8, c8);
+        var c10 = new CompoundStatement(s7, c9);
+        var c11 = new CompoundStatement(s3, c10);
+
+        return new ProgramState(
+                new Stack<>(),
+                new Map<>(),
+                new ConcurrentList<>(),
+                new ConcurrentMap<>(),
+                new Heap(),
+                c11,
+                new ProcedureTable());
     }
 
 }

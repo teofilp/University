@@ -15,7 +15,7 @@ public class RunParallelStatement implements Statement {
 
     @Override
     public ProgramState execute(ProgramState state) throws CustomException {
-        return new ProgramState(new Stack<>(), state.getSymbolTable().clone(), state.getOutput(), state.getFileTable(), state.getHeap(), statement);
+        return new ProgramState(new Stack<>(), state.getSymbolTables().clone(), state.getOutput(), state.getFileTable(), state.getHeap(), statement, state.getProcedureTable());
     }
 
     @Override

@@ -79,6 +79,8 @@ public class ProgramState implements Cloneable<ProgramState> {
                 .append(fileTable.toString(false)).append(separator)
                 .append("Execution Stack").append(separator)
                 .append(executionStack.toString()).append(separator)
+                .append("LockTable").append(separator)
+                .append(lockTable).append(separator)
                 .append("Output").append(separator)
                 .append(output).append(separator)
                 .toString();

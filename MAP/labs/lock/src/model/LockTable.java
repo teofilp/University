@@ -47,4 +47,9 @@ public class LockTable implements ILockTable {
     public Collection<Integer> getKeys() {
         return map.getKeys();
     }
+
+    @Override
+    public String toString() {
+        return map.getKeys().stream().map(x -> String.format("%s -> %s", x, map.get(x))).reduce((acc, curr) -> acc + "\n" + curr).orElse("n\\a");
+    }
 }

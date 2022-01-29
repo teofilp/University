@@ -52,7 +52,9 @@
     </TableView>
     <Label GridPane.rowIndex="5" GridPane.columnIndex="12" text="Execution Stack" GridPane.columnSpan="12"/>
     <ListView GridPane.rowIndex="6" GridPane.columnIndex="12" GridPane.columnSpan="12" fx:id="exeStackLV"/>
-    <Button fx:id="runOnceButton" GridPane.rowIndex="7" GridPane.columnIndex="12" text="Run Once">
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="0" text="Execution Stack" GridPane.columnSpan="12"/>
+    <TableView GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="12" fx:id="procedureTV"/>
+    <Button fx:id="runOnceButton" GridPane.rowIndex="9" GridPane.columnIndex="12" text="Run Once">
         <GridPane.margin>
             <Insets top="24"/>
         </GridPane.margin>
