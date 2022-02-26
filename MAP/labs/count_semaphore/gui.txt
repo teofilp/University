@@ -1,0 +1,968 @@
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Ref(int) v1 ||| int cnt | new(v1, 1) | CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ v1: Ref(0 -> int),  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+int cnt | new(v1, 1) | CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ v1: Ref(0 -> int),  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+int cnt ||| new(v1, 1) | CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 0, v1: Ref(0 -> int),  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+new(v1, 1) | CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 0, v1: Ref(0 -> int),  }
+ --------------------
+Heap
+ --------------------
+{  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+new(v1, 1) ||| CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 0, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+CreateSemaphore(cnt, ReadHeap(v1)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 0, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+CreateSemaphore(cnt, ReadHeap(v1)) ||| fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) | fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt)) ||| fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) | Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+fork(Acquire(cnt) | WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt)) ||| Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) | print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 10) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 10) ||| print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 1,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) ) ||| Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #11
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) - 1 ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) - 1 ) ||| Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10,  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Acquire(cnt) ||| WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #10
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 10) | WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 10,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 10) ||| WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 100,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 2) | print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 100,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+WriteHeap(v1, ReadHeap(v1) * 2) ||| print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 200,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) ) | Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 200,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+print ( ReadHeap(v1) ) ||| Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 200,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+Release(cnt) ||| 
+ --------------------
+Output
+ --------------------
+[ 10, 9, 200,  ]
+ --------------------
+Program State #12
+ --------------------
+Symbol Table
+ --------------------
+{ cnt: 1, v1: Ref(1 -> int),  }
+ --------------------
+Heap
+ --------------------
+{ 1: 200,  }
+ --------------------
+File Table
+ --------------------
+
+ --------------------
+Execution Stack
+ --------------------
+
+ --------------------
+Output
+ --------------------
+[ 10, 9, 200,  ]
+ --------------------
