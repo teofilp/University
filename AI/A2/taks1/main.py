@@ -1,11 +1,10 @@
-
-
-# import the pygame module, so you can use it
-from multiprocessing.dummy import current_process
-import pickle,pygame,time
+from models.drone import Drone
+from models.map import Map
+from ui.droneView import DroneView
+from ui.mapView import MapView
+import pygame,time
 from pygame.locals import *
-from random import random, randint
-import numpy as np
+from random import randint
 from timer import Timer
 
 #Creating some colors
@@ -24,81 +23,6 @@ RIGHT = 3
 
 #define indexes variations 
 v = [[-1, 0], [1, 0], [0, 1], [0, -1]]
-
-
-class Map():
-    def __init__(self, n = 20, m = 20):
-        self.n = n
-        self.m = m
-        self.surface = np.zeros((self.n, self.m))
-    
-    def randomMap(self, fill = 0.2):
-        for i in range(self.n):
-            for j in range(self.m):
-                if random() <= fill :
-                    self.surface[i][j] = 1
-                
-    def __str__(self):
-        string=""
-        for i in range(self.n):
-            for j in range(self.m):
-                string = string + str(int(self.surface[i][j]))
-            string = string + "\n"
-        return string
-                
-    def saveMap(self, numFile = "test.map"):
-        with open(numFile,'wb') as f:
-            pickle.dump(self, f)
-            f.close()
-        
-    def loadMap(self, numfile):
-        with open(numfile, "rb") as f:
-            dummy = pickle.load(f)
-            self.n = dummy.n
-            self.m = dummy.m
-            self.surface = dummy.surface
-            f.close()
-        
-    def image(self, colour = BLUE, background = WHITE):
-        imagine = pygame.Surface((400,400))
-        brick = pygame.Surface((20,20))
-        brick.fill(BLUE)
-        imagine.fill(WHITE)
-        for i in range(self.n):
-            for j in range(self.m):
-                if (self.surface[i][j] == 1):
-                    imagine.blit(brick, ( j * 20, i * 20))
-                
-        return imagine        
-        
-
-class Drone():
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-    
-    def move(self, detectedMap):
-        pressed_keys = pygame.key.get_pressed()
-        if self.x > 0:
-            if pressed_keys[K_UP] and detectedMap.surface[self.x-1][self.y]==0:
-                self.x = self.x - 1
-        if self.x < 19:
-            if pressed_keys[K_DOWN] and detectedMap.surface[self.x+1][self.y]==0:
-                self.x = self.x + 1
-        
-        if self.y > 0:
-            if pressed_keys[K_LEFT] and detectedMap.surface[self.x][self.y-1]==0:
-                self.y = self.y - 1
-        if self.y < 19:        
-            if pressed_keys[K_RIGHT] and detectedMap.surface[self.x][self.y+1]==0:
-                 self.y = self.y + 1
-                  
-    def mapWithDrone(self, mapImage):
-        drona = pygame.image.load("drona.png")
-        mapImage.blit(drona, (self.y * 20, self.x * 20))
-        
-        return mapImage
-
 
 def searchGreedy(mapM, droneD, initialX, initialY, finalX, finalY):
     found = False
@@ -221,14 +145,12 @@ def displayWithPath(image, greedy, astar, gcolor, acolor):
 
     return image
 
-                  
 # define a main function
 def main():
     
     # we create the map
     m = Map() 
-    #m.randomMap()
-    #m.saveMap("test2.map")
+    mv = MapView(m)
     m.loadMap("test1.map")
     
     # initialize the pygame module
@@ -244,49 +166,39 @@ def main():
     
     #create drona
     d = Drone(x, y)
+    dv = DroneView(d)
     
-    # create a surface on screen that has the size of 400 x 480
     screen = pygame.display.set_mode((400,400))
     screen.fill(WHITE)
     
-    # define a variable to control the main loop
     running = True
      
-    # main loop
     while running:
-        # event handling, gets all event from the event queue
         for event in pygame.event.get():
-            # only do something if the event is of type QUIT
             
             if event.type == KEYDOWN:
-                running = False
-                # d.move(m) #this call will be erased        
+                running = False   
         
-        screen.blit(d.mapWithDrone(m.image()),(0,0))
+        screen.blit(dv.mapWithDrone(mv.image()),(0,0))
         pygame.display.flip()
 
     timer = Timer()
     timer.start()
 
-    greedyPath = searchGreedy(m, d, 5, 7, 0, 19)
+    greedyPath = searchGreedy(m, d, 5, 7, 19, 19)
     print(f"Greedy: {timer.elapsed():0.4f} seconds")
     
     timer.reset()
     timer.start()
     
-    aStarPath = searchAStar(m, d, 5, 7, 0, 19)
+    aStarPath = searchAStar(m, d, 5, 7, 19, 19)
     print(f"A*: {timer.elapsed():0.4f} seconds")
     
-    screen.blit(displayWithPath(m.image(), greedyPath, aStarPath, RED, GREEN),(0,0))
+    screen.blit(displayWithPath(mv.image(), greedyPath, aStarPath, RED, GREEN),(0,0))
     
     pygame.display.flip()
     time.sleep(5)
     pygame.quit()
      
-# run the main function only if this module is executed as the main script
-# (if you import this as a module then nothing is executed)
 if __name__=="__main__":
-    # call the main function
     main()
-
-
