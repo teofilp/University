@@ -16,7 +16,7 @@
       <div class="navigation">
         <div class="navigation-top">
           <div class="start">
-            <ion-icon name="menu" class="menu-icon"></ion-icon>
+            <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
             <div class="logo-container">
               <ion-icon name="logo-youtube" class="logo"></ion-icon>
               <span>Premium</span>
@@ -60,31 +60,194 @@
           <div class="chip">Gaming</div>
           <div class="chip">Debates</div>
           <div class="chip">JavaScript</div>
-          <div class="chip">History</div>
         </div>
       </div>
-      <div class="menu"></div>
+      <div class="menu">
+        <div class="menu-section">
+          <ul>
+            <li class="active">
+              <ion-icon name="home"></ion-icon>
+              <span>Home</span>
+            </li>
+            <li>
+              <ion-icon name="compass-outline"></ion-icon>
+              <span>Explore</span>
+            </li>
+            <li>
+              <ion-icon name="play-circle-outline"></ion-icon>
+              <span>Shorts</span>
+            </li>
+            <li>
+              <ion-icon name="albums-outline"></ion-icon>
+              <span>Subscriptions</span>
+            </li>
+            <li>
+              <ion-icon name="play-outline"></ion-icon>
+              <span>Originals</span>
+            </li>
+            <li>
+              <ion-icon name="play-circle-outline"></ion-icon>
+              <span>YouTube Music</span>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <ul>
+            <li>
+              <ion-icon name="albums-outline"></ion-icon>
+              <span>Library</span>
+            </li>
+            <li>
+              <ion-icon name="time-outline"></ion-icon>
+              <span>History</span>
+            </li>
+            <li>
+              <ion-icon name="play-skip-forward-outline"></ion-icon>
+              <span>Your videos</span>
+            </li>
+            <li>
+              <ion-icon name="timer-outline"></ion-icon>
+              <span>Watch later</span>
+            </li>
+            <li>
+              <ion-icon name="download-outline"></ion-icon>
+              <span>Downloads</span>
+            </li>
+            <li>
+              <ion-icon name="thumbs-up-outline"></ion-icon>
+              <span>Liked videos</span>
+            </li>
+            <li>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+              <span>Show more</span>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <span>subscriptions</span>
+          <ul>
+            <li>
+              <div class="channel-icon">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AKedOLQZI9SpezjIGTiiEH3F_Wl7gKVledKUrjH-M4Aaqw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <span>Dan Mircea Suciu</span>
+              <ion-icon class="live subs-icon" name="radio-outline"></ion-icon>
+            </li>
+            <li>
+              <div class="channel-icon">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AKedOLR3x4ie6LK20vuJQ6GFpXqr-sERAtLYcfcTdkxg8g=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <span>SPACE (Official)</span>
+              <ion-icon class="live subs-icon" name="radio-outline"></ion-icon>
+            </li>
+            <li>
+              <div class="channel-icon">
+                <img
+                  src="https://yt3.ggpht.com/Q2dcN3FYEmo5ejqxp6Ga2AfUl38vDYxM_JPG6No4O0y6bQIazE9ycFsWERClnB_o4tuaX9a7=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <span>Trap Nation</span>
+              <ion-icon class="live subs-icon" name="radio-outline"></ion-icon>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <span>more from youtube</span>
+          <ul>
+            <li>
+              <ion-icon name="game-controller-outline"></ion-icon>
+              <span>Gaming</span>
+            </li>
+            <li>
+              <ion-icon name="pulse-outline"></ion-icon>
+              <span>Live</span>
+            </li>
+            <li>
+              <ion-icon name="trophy-outline"></ion-icon>
+              <span>Sports</span>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <ul>
+            <li>
+              <ion-icon name="settings-outline"></ion-icon>
+              <span>Settings</span>
+            </li>
+            <li>
+              <ion-icon name="flag-outline"></ion-icon>
+              <span>Report history</span>
+            </li>
+            <li>
+              <ion-icon name="help-circle-outline"></ion-icon>
+              <span>Help</span>
+            </li>
+            <li>
+              <ion-icon name="flag-outline"></ion-icon>
+              <span>Send feedback</span>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-footer">
+          <div class="menu-footer-section">
+            <span>About</span>
+            <span>Press</span>
+            <span>Copyright</span>
+            <span>Contact us</span>
+            <span>Creators</span>
+            <span>Advertise</span>
+            <span>Developers</span>
+          </div>
+          <div class="menu-footer-section">
+            <span>Terms</span>
+            <span>Privacy</span>
+            <span>Policy & Safety</span>
+            <span>How YouTube works</span>
+            <span>Test new features</span>
+          </div>
+        </div>
+      </div>
       <div class="page-content-container">
         <div class="video-card-item-container" id="page-item">
           <div class="video-card-item-content">
             <div class="video-image-wrapper">
-              <img src="https://picsum.photos/200/300" alt="" />
+              <img
+                class="video-image"
+                src="https://picsum.photos/200/300"
+                alt=""
+              />
               <span class="video-duration">12:59</span>
             </div>
             <div class="video-details-wrapper">
               <div class="chanel-icon-wrapper">
-                <img src="https://picsum.photos/200/300" alt="" />
+                <img
+                  class="channel-image"
+                  src="https://picsum.photos/200/300"
+                  alt=""
+                />
               </div>
               <div class="video-details">
                 <h4 class="video-title">
                   America Was Wrong About Ethanol - Study Shows
                 </h4>
                 <div class="video-footer">
-                  <span class="meta-text">Engineering Explained</span>
+                  <span class="meta-text channel-name"
+                    >Engineering Explained</span
+                  >
                   <div class="video-meta">
-                    <span class="meta-text">27K views</span>
+                    <span class="meta-text views-count">27K views</span>
                     <span class="meta-text">&middot;</span>
-                    <span class="meta-text">2 hours ago</span>
+                    <span class="meta-text post-date">2 hours ago</span>
+                  </div>
+                  <div style="margin-top: 8px">
+                    <span class="live-badge">live now</span>
                   </div>
                 </div>
               </div>
