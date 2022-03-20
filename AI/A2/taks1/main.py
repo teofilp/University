@@ -6,20 +6,7 @@ import pygame,time
 from pygame.locals import *
 from random import randint
 from timer import Timer
-
-#Creating some colors
-BLUE  = (0, 0, 255)
-GRAYBLUE = (50,120,120)
-RED   = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-
-#define directions
-UP = 0
-DOWN = 2
-LEFT = 1
-RIGHT = 3
+from constants.colors import WHITE, RED, GREEN
 
 #define indexes variations 
 v = [[-1, 0], [1, 0], [0, 1], [0, -1]]
@@ -83,6 +70,9 @@ def searchAStar(mapM, droneD, initialX, initialY, finalX, finalY):
     parent = {
         (initialX, initialY): None
     }
+    currentCost = {
+        (initialX, initialY): 0
+    }
 
     while len(toVisit) > 0 and not found:
         if len(toVisit) == 0:
@@ -104,12 +94,13 @@ def searchAStar(mapM, droneD, initialX, initialY, finalX, finalY):
                 if pos not in parent:
                     parent[pos] = [(node[0], node[1])]
                 else:
-                    
                     parent[pos].append((node[0], node[1]))
+
+                currentCost[(next_X, next_Y)] = currentCost[(node[0], node[1])] + 1
+
                 aux.append(pos)
-            
         toVisit = toVisit + aux
-        toVisit.sort(key=lambda x: distanceFromDestination(x, (finalX, finalY)))
+        toVisit.sort(key=lambda x: currentCost[(x[0], x[1])] + distanceFromDestination(x, (finalX, finalY)))
 
     current_pos = (finalX, finalY)
     path = [(finalX, finalY)]
@@ -197,7 +188,7 @@ def main():
     screen.blit(displayWithPath(mv.image(), greedyPath, aStarPath, RED, GREEN),(0,0))
     
     pygame.display.flip()
-    time.sleep(5)
+    time.sleep(25)
     pygame.quit()
      
 if __name__=="__main__":

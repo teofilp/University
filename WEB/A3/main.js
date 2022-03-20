@@ -1,25 +1,4 @@
-(() => {
-  var count = 1;
-
-  setInterval(() => {
-    document.title = `(${count}) YouTube`;
-    count++;
-  }, 10000);
-})();
-
 var videos = [
-  {
-    name: "Watch Sky News live",
-    channel: "Sky News",
-    videoImageUrl:
-      "https://i.ytimg.com/vi/9Auq9mYxFEE/hq720_live.jpg?sqp=CLzaspEG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAIislc30fRiqfV126f-NqQK_D--w",
-    channelImageUrl:
-      "https://yt3.ggpht.com/E96qzkAoX81DQs7wqRHR4rNk1esa4quBPzda2QRzImlhoHOVgRdAN8o-S0Rb_hpygo_n4LdhwTE=s68-c-k-c0x00ffffff-no-rj",
-    views: "101K views",
-    posted: "2 weeks ago",
-    duration: "12:24",
-    isLive: true,
-  },
   {
     name: "Ferrari 812 v BMW M5 CS: DRAG RACE",
     channel: "carwow",
@@ -30,6 +9,7 @@ var videos = [
     views: "1.6M views",
     posted: "2 weeks ago",
     duration: "8:46",
+    verified: true,
   },
   {
     name: "Biden Means Pain At The Pump | Ep. 1448",
@@ -41,6 +21,7 @@ var videos = [
     views: "233K views",
     posted: "4 days ago",
     duration: "49:22",
+    verified: true,
   },
   {
     name: "Managing your .NET app configuration like a pro",
@@ -52,6 +33,19 @@ var videos = [
     views: "32K views",
     posted: "3 weeks ago",
     duration: "15:16",
+  },
+  {
+    name: "Watch Sky News live",
+    channel: "Sky News",
+    videoImageUrl:
+      "https://i.ytimg.com/vi/9Auq9mYxFEE/hq720_live.jpg?sqp=CLzaspEG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAIislc30fRiqfV126f-NqQK_D--w",
+    channelImageUrl:
+      "https://yt3.ggpht.com/E96qzkAoX81DQs7wqRHR4rNk1esa4quBPzda2QRzImlhoHOVgRdAN8o-S0Rb_hpygo_n4LdhwTE=s68-c-k-c0x00ffffff-no-rj",
+    views: "101K views",
+    posted: "2 weeks ago",
+    duration: "12:24",
+    isLive: true,
+    verified: true,
   },
   {
     name: 'MacBook Pro 14" M1 Pro Setup for programming & productivit...',
@@ -74,6 +68,7 @@ var videos = [
     views: "159K views",
     posted: "5 hours ago",
     duration: "26:29",
+    verified: true,
   },
   {
     name: "Who Has Deadlier Missiles? Russia or United States",
@@ -85,6 +80,7 @@ var videos = [
     views: "1.4M views",
     posted: "1 year ago",
     duration: "14:10",
+    verified: true,
   },
   {
     name: "I installed Windows on Steam Deck and I regret it",
@@ -96,6 +92,7 @@ var videos = [
     views: "184K views",
     posted: "2 hours ago",
     duration: "18:22",
+    verified: true,
   },
   {
     name: "Consultații Mate-Info UBB | 2021-2022 | Algoritmi care lucreaza cu tipuri definite de utilizator",
@@ -143,7 +140,7 @@ var videos = [
   },
 ];
 
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   var item = document.getElementById("page-item");
   var parent = item.parentNode;
 
@@ -155,9 +152,9 @@ var videos = [
     const videoImage = newItem.querySelector("img.video-image");
     videoImage.src = "https://www.w3schools.com/images/w3lynx_200.png";
 
-    if (video.isLive) {
-      newItem.classList.add("is-live");
-    }
+    video.isLive && newItem.classList.add("is-live");
+    video.verified && newItem.classList.add("verified");
+
     newItem.querySelector("h4.video-title").innerHTML = video.name;
     newItem.querySelector("span.channel-name").innerHTML = video.channel;
     newItem.querySelector("span.views-count").innerHTML = video.views;
@@ -168,4 +165,13 @@ var videos = [
 
     parent.appendChild(newItem);
   });
-})();
+
+  (() => {
+    var count = 1;
+
+    setInterval(() => {
+      document.title = `(${count}) YouTube`;
+      count++;
+    }, 10000);
+  })();
+});

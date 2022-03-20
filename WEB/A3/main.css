@@ -437,3 +437,13 @@ body {
 .video-card-item-container.is-live .live-badge {
   display: inline-block;
 }
+
+ion-icon.verified {
+  color: var(--text-color);
+  font-size: 14px;
+  display: none;
+}
+
+.video-card-item-container.verified ion-icon.verified {
+  display: block;
+}
