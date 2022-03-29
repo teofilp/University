@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="nav">
+      <span class="menu-item"
+        >item 1
+        <div class="submenu">
+          <div class="submenu-container">
+            <span>subitem 1</span>
+            <span>subitem 2</span>
+            <span>subitem 3</span>
+            <span>subitem 4</span>
+          </div>
+        </div>
+      </span>
+      <span class="menu-item"
+        >item 1
+        <div class="submenu">
+          <div class="submenu-container">
+            <span>subitem 1</span>
+            <span>subitem 2</span>
+            <span>subitem 3</span>
+            <span>subitem 4</span>
+          </div>
+        </div>
+      </span>
+      <span class="menu-item"
+        >item 1
+        <div class="submenu">
+          <div class="submenu-container">
+            <span>subitem 1</span>
+            <span>subitem 2</span>
+            <span>subitem 3</span>
+            <span>subitem 4</span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("body").css({
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        padding: 0,
+      });
+
+      $("#nav").css({
+        padding: "0 120px",
+        background: "black",
+        display: "flex",
+        "justify-content": "space-around",
+      });
+
+      $("span.menu-item").css({
+        color: "white",
+        "text-transform": "uppercase",
+        position: "relative",
+        padding: "8px 12px;",
+      });
+
+      $(".submenu").css({
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%)",
+        padding: "0 8px",
+        width: "200px",
+        opacity: "0",
+        top: "0",
+        bottom: "100%",
+      });
+
+      $(".submenu-container").css({
+        display: "flex",
+        "flex-direction": "column",
+        background: "green",
+        "text-align": "center",
+      });
+    </script>
+    <script>
+      $(".menu-item").click(function () {
+        const isOpen = $(this).children(".submenu").css("opacity") == 1;
+        $(this)
+          .children(".submenu")
+          .animate(
+            isOpen
+              ? {
+                  opacity: 0,
+                  top: 0,
+                  bottom: "100%",
+                }
+              : {
+                  opacity: 1,
+                  top: "100%",
+                  bottom: 0,
+                },
+            200
+          );
+      });
+    </script>
+  </body>
+</html>
