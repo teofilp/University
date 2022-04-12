@@ -24,6 +24,7 @@ class Ui:
         print("5. run the solver")
         print("6. visualise the statistics")
         print("7. view the drone moving on path")
+        print("8. get std")
     
     def load_map(self):
         print("Enter map filename: ")
@@ -32,7 +33,7 @@ class Ui:
         self._repository.cmap.load_map(file_name)
 
     def run_solver(self):
-        self._path, self._stats = self._controller.solver()
+        self._path, self._stats = self._controller.solve_once()
         self.view_drone_moving()
 
     def run(self):
@@ -54,6 +55,11 @@ class Ui:
                 self.view_stats()
             elif option == 7:
                 self.view_drone_moving()
+            elif option == 8:
+                self.view_std()
+
+    def view_std(self):
+        print("Standard deviation: " + str(self._controller.solver()))
 
     def setup_parameters(self):
         seeds = int(input("Enter seeds number: "))
@@ -80,11 +86,8 @@ class Ui:
 
     def view_stats(self):
         indices = [x+1 for x in range(0, len(self._stats))]
-        averages = list(map(lambda x: x[0], self._stats))
-        stds = list(map(lambda x: x[1], self._stats))
 
-        plt.plot(indices, averages, "-b", label="Average")
-        plt.plot(indices, stds, "-r", label="Standard deviation")
+        plt.plot(indices, self._stats, "-b", label="Average")
         plt.legend(loc="upper left")
 
         plt.show()

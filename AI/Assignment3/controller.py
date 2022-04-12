@@ -1,5 +1,6 @@
 from repository import *
 from random import seed
+import numpy as np
 
 class controller():
     def __init__(self, repository):
@@ -64,30 +65,36 @@ class controller():
 
         for i in range(self._iterations_number):
             self._iteration += 1
-            # if self._iteration % 10 == 0:
-
             self.iteration()
 
             data = self._repository.get_average_and_std()
 
-            scoped_statistics.append(data)
+            scoped_statistics.append(data[0])
         
-        self._statistics.append(scoped_statistics[-1])
+        return scoped_statistics
     
     def solver(self, args=0):
-        self._statistics = []
+        # self._statistics = []
+        averages = []
         # args - list of parameters needed in order to run the solver
         for s in range(self._seeds_number):
+            print ("Seed: " + str(s))
             seed(s)
             population = self._repository.createPopulation([self._population_size, self._steps_number])
             self._repository.add_population(population)
-            self.run()
-            print("Avg: " + str(list(map(lambda x: x[0], self._statistics))))
-            print("Std: " + str(list(map(lambda x: x[1], self._statistics))))
+            averages.append(self.run()[-1])
         # create the population,
         # run the algorithm
         # return the results and the statistics
-        return self._repository.get_best_path(), self._statistics
+        return np.std(averages)
+
+    def solve_once(self):
+        population = self._repository.createPopulation([self._population_size, self._steps_number])
+        self._repository.add_population(population)
+        averages = self.run()
+
+        return self._repository.get_best_path(), averages
+
 
     def set_steps(self, value): self._steps_number = value
 
