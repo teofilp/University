@@ -1,0 +1,129 @@
+#right-panel {
+  justify-content: flex-start;
+}
+
+#guest-books-list {
+  width: 100%;
+  position: relative;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+#page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#page-title ion-icon {
+  cursor: pointer;
+}
+
+.guest-book-item {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  height: 250px;
+}
+
+.item-content {
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 2px 15px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 24px;
+  position: relative;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 8px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h2 {
+  margin: 0;
+}
+
+.title ion-icon {
+  font-size: 24px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.title::after {
+  width: 50px;
+  height: 2px;
+  border-radius: 4px;
+  background: black;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+cite {
+  margin-top: 16px;
+  display: inline-block;
+  text-align: justify;
+}
+
+.created-at {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.pagination {
+  margin: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.pagination button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: orange;
+  border: none;
+  font-size: 24px;
+}
+
+#filter-box {
+  display: flex;
+  margin-bottom: 24px;
+  display: none;
+}
+
+#filter-box button {
+  align-self: flex-end;
+}
+
+#filter-box .form-item {
+  align-items: flex-end;
+  padding: 0;
+  margin-bottom: 0;
+  width: 350px;
+}
+
+.form-item input,
+.form-item label {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button.submit {
+  padding: 10px 16px;
+  margin-left: 12px;
+}

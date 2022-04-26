@@ -1,0 +1,33 @@
+<div id="panel-container">
+  <div id="left-panel">
+    <img id="logo" src="../assets/logo.png" alt="" />
+  </div>
+  <div id="right-panel">
+    <ion-icon
+      id="logout-icon"
+      name="log-out-outline"
+      onclick="logout()"
+    ></ion-icon>
+    <h1 id="page-title">
+      View Guest Books
+      <ion-icon id="toggle-search" name="filter-circle-outline"></ion-icon>
+    </h1>
+    <div id="filter-box">
+      <div class="form-item">
+        <label for="search">Search by author/title</label>
+        <input type="text" id="search" name="search" />
+      </div>
+      <button class="submit" onclick="fetchItems()">Search</button>
+    </div>
+    <div id="guest-books-list"></div>
+    <div class="pagination">
+      <button class="previous" onclick="previousPage()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+      <span id="pagination-details"></span>
+      <button class="next" onclick="nextPage()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+</div>

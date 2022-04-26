@@ -1,0 +1,26 @@
+<div id="panel-container">
+  <div id="left-panel">
+    <img id="logo" src="../assets/logo.png" alt="" />
+  </div>
+  <div id="right-panel">
+    <ion-icon
+      id="login-icon"
+      name="person-circle-outline"
+      onclick="goToLogin()"
+    ></ion-icon>
+    <h1>Add new record</h1>
+    <div class="form-item">
+      <label for="email">Author</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="form-item">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" />
+    </div>
+    <div class="form-item">
+      <label for="description">Description</label>
+      <textarea name="description" id="description" rows="5"></textarea>
+    </div>
+    <button class="submit" onclick="handleSubmit()">Create</button>
+  </div>
+</div>
