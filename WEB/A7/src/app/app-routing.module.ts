@@ -12,7 +12,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: EditGuestbookComponent,
   },
   {

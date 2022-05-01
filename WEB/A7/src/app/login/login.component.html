@@ -6,12 +6,17 @@
     <h1>Login</h1>
     <div class="form-item">
       <label for="username">Username</label>
-      <input id="username" type="text" name="username" />
+      <input [(ngModel)]="username" id="username" type="text" name="username" />
     </div>
     <div class="form-item">
       <label for="password">Password</label>
-      <input id="password" type="password" name="password" />
+      <input
+        [(ngModel)]="password"
+        id="password"
+        type="password"
+        name="password"
+      />
     </div>
-    <button class="submit" onclick="handleSubmit()">Login</button>
+    <button class="submit" (click)="handleSubmit()">Login</button>
   </div>
 </div>

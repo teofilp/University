@@ -103,7 +103,6 @@ cite {
 #filter-box {
   display: flex;
   margin-bottom: 24px;
-  display: none;
 }
 
 #filter-box button {

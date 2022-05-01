@@ -25,6 +25,8 @@ class Individual:
         
     def fitness(self, map, drone):
         path = self.build_path(drone)
+        last_pos = []
+        initial_pos = path[0]
         visited = []
 
         self.__f = 1
@@ -44,6 +46,7 @@ class Individual:
             
             for direction in v:
                 current_position = [x, y]
+                last_pos = current_position
 
                 while can_continue(current_position, map):
                     [current_x, current_y] = current_position
@@ -53,6 +56,9 @@ class Individual:
                         visited.append(current_position)
                         self.__f += 1                     
         
+            distance_from_start = abs(last_pos[0] - initial_pos[0]) + abs(last_pos[1] - initial_pos[1])
+            self.__f = max(1, self.__f - distance_from_start)
+
         return self.__f
 
     def build_path(self, drone):

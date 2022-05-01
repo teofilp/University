@@ -9,6 +9,7 @@ import { EditGuestbookComponent } from './edit-guestbook/edit-guestbook.componen
 import { AddGuestbookComponent } from './add-guestbook/add-guestbook.component';
 import { IonicModule } from '@ionic/angular';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,12 @@ import { HomeComponent } from './home/home.component';
     AddGuestbookComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, IonicModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    IonicModule.forRoot(),
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
