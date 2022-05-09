@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,7 +13,7 @@ export class EditGuestbookComponent implements OnInit {
   description: string = '';
   recordId: number = 0;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.recordId = Number(this.route.snapshot.params['id']);
@@ -53,7 +53,7 @@ export class EditGuestbookComponent implements OnInit {
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status === 200) {
         alert('Record updated successfully');
-        that.getRecord(that.recordId);
+        that.router.navigate(['/view'], { relativeTo: that.route });
       }
     };
 

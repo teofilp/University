@@ -66,6 +66,9 @@ export class ViewGuestbooksComponent implements OnInit {
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status === 200) {
           alert('Record deleted successfully!');
+          if (that.pagination.currentPage > 1 && that.items.length === 1) {
+            that.pagination.currentPage--;
+          }
           that.fetchItems();
         }
       };
