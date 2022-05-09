@@ -1,3 +1,5 @@
+use RestaurantManager
+
 create table Chefs
 (
     Id   int identity
@@ -5,8 +7,6 @@ create table Chefs
             primary key nonclustered,
     Name nvarchar(50) not null,
     Age  int          not null
-        constraint CK_TABLE_CHEFS_AGE
-            check ([Age] > 18)
 )
 go
 
@@ -34,7 +34,6 @@ create table RestaurantsChefs
 go
 
 create table Logs (
-    Id int not null primary key ,
     OperationType varchar(50) not null,
     TableName varchar(50) not null,
     Timestamp datetime not null,

@@ -1,10 +1,10 @@
 use [RestaurantManager]
 
---- T2
-set transaction isolation level read uncommitted
+--- T1
+set transaction isolation level read committed
 begin transaction
 select * from Chefs
 waitfor delay '00:00:15'
 select * from Chefs
 commit transaction
---- solution: change transaction isolation level to read committed :)
+--- solution transaction isolation level repeatable reads

@@ -1,5 +1,11 @@
 use [RestaurantsManager]
 
+create or alter procedure Logi(@operation varchar(50), @table varchar(50))
+as
+begin
+	insert into Logs(OperationType, TableName, Timestamp) values(@operation, @table, getdate())
+end
+
 
 create or alter procedure AddChefsWithRestaurantsRollback(@chef varchar(50), @age int, @restaurant varchar(300), @maxChefs int)
 as
@@ -8,24 +14,27 @@ begin
     declare @restaurantId as int = 0
     begin transaction
     begin try
-        if (dbo.validateChef(@chef, @age) = 0)
+        if ([dbo].[validateChef](@chef, @age) = 0)
         begin
             raiserror ('Invalid chef', 14, 1);
         end
         insert into Chefs (Name, Age) values (@chef, @age)
+		
         set @chefId = @@identity
-        exec Log 'insert', 'Chefs'
+        exec dbo.Logi 'insert', 'Chefs'
 
-        if (dbo.validateRestaurant(@restaurant, @maxChefs) = 0)
+        if ([dbo].[validateRestaurant](@restaurant, @maxChefs) = 0)
         begin
             raiserror ('Invalid restaurant', 14, 1)
         end
-        insert into Restaurants(Name, MaxChefs) values (@restaurant, @maxChefs)
+
+        insert into Restaurants([Name], MaxChefs) values (@restaurant, @maxChefs)
+		
         set @restaurantId = @@identity
-        exec Log 'insert', 'Restaurants'
+        exec dbo.Logi 'insert', 'Restaurants'
 
         insert into RestaurantsChefs (ChefId, RestaurantId, CreateDate) values (@chefId, @restaurantId, getdate())
-        exec Log 'insert', 'RestaurantsChefs'
+        exec dbo.Logi 'insert', 'RestaurantsChefs'
         commit transaction
         select 'Transaction completed sucessfully!'
     end try

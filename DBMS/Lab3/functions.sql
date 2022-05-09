@@ -1,4 +1,4 @@
-create or alter function validateChef(@chef varchar(50), @age int)
+create function validateChef(@chef varchar(50), @age int)
 returns bit as
 begin
     declare @valid as bit = 1;
@@ -16,7 +16,7 @@ begin
     return @valid
 end
 
-create or alter function validateRestaurant(@restaurant varchar(300), @maxChefs int)
+create function validateRestaurant(@restaurant varchar(300), @maxChefs int)
 returns bit as
 begin
     declare @valid as bit = 1;
