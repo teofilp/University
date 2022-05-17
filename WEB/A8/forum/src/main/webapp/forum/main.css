@@ -1,0 +1,75 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Arial, 'sans-serif';
+    background: #efefef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#forum-container {
+    padding: 32px 128px;
+}
+
+.card {
+    border-radius: 4px;
+    background: white;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+#add-form {
+    padding: 32px;
+    max-width: 500px;
+}
+
+#toggle-add {
+    padding: 8px 12px;
+    margin-bottom: 32px;
+    border: none;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    width: 350px;
+}
+
+textarea {
+    resize: none;
+}
+
+.post-item {
+    width: 100%;
+    padding: 32px;
+    margin-bottom: 16px;
+}
+
+.post-title {
+    font-style: italic;
+}
+
+.post-content {
+    padding-left: 48px;
+}
+
+.post-author {
+    float: right;
+}
+
+.actions-container {
+    float: right;
+    display: flex;
+    gap: 12px;
+}
+
+.comment-item {
+    padding: 12px;
+}
+.comment-item:nth-of-type(odd) {
+    background: #efefef;
+}
