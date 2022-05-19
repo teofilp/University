@@ -22,6 +22,7 @@
 </head>
 <body>
 <div id="forum-container">
+  <button style="float:right" onclick="logout()">Logout</button>
   <button id="toggle-add" class="card" onclick="toggleAddPost()">Toggle add post</button>
   <form id="add-form" class="card">
     <div class="form-item">
@@ -62,6 +63,11 @@
     const toggleAddPost = () => {
         showAddForm = !showAddForm;
         formElement.style.display = showAddForm ? 'none' : 'block';
+    }
+
+    const logout = () => {
+        <% session.removeAttribute("user"); %>
+        location.reload();
     }
 
     const handleSubmit = async function(e) {
