@@ -95,6 +95,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         formElement = document.getElementById("add-form");
         formElement.addEventListener('submit', handleSubmit)
+        document.getElementById("category").value = params.category;
         fetchItems();
     })
 
