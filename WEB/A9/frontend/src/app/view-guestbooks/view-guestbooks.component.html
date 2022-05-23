@@ -1,0 +1,64 @@
+<div id="panel-container">
+  <div id="left-panel">
+    <img id="logo" src="../assets/logo.png" alt="" />
+  </div>
+  <div id="right-panel">
+    <ion-icon
+      id="logout-icon"
+      name="log-out-outline"
+      (click)="logout()"
+    ></ion-icon>
+    <h1 id="page-title">
+      View Guest Books
+      <ion-icon
+        id="toggle-search"
+        name="filter-circle-outline"
+        (click)="toggleSearch()"
+      ></ion-icon>
+    </h1>
+    <ng-template [ngIf]="showSearch">
+      <div id="filter-box">
+        <div class="form-item">
+          <label for="search">Search by author/title</label>
+          <input [(ngModel)]="search" type="text" id="search" name="search" />
+        </div>
+        <button class="submit" (click)="fetchItems()">Search</button>
+      </div>
+    </ng-template>
+    <div id="guest-books-list">
+      <div class="guest-book-item" *ngFor="let x of items">
+        <div class="item-content">
+          <div class="title">
+            <h2>{{ x.title }}</h2>
+            <div>
+              <ion-icon
+                name="create-outline"
+                (click)="handleEdit(x.id)"
+              ></ion-icon>
+              <ion-icon
+                name="trash-outline"
+                (click)="handleDelete(x.id)"
+              ></ion-icon>
+            </div>
+          </div>
+          <cite
+            >{{ x.comment }}
+            <span class="author">&#8212;{{ x.author }}</span>
+          </cite>
+          <span class="created-at">{{ x.date.toLocaleString() }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <button class="previous" (click)="previousPage()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+      <span id="pagination-details"
+        >{{ pagination.currentPage }} / {{ pagination.pages }}</span
+      >
+      <button class="next" (click)="nextPage()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+</div>

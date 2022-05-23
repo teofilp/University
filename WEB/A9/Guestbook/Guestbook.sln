@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook.WebApi", "Guestbook.WebApi\Guestbook.WebApi.csproj", "{4111B445-FF82-482E-AC32-EB04CFA06690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook.Data", "Guestbook.Data\Guestbook.Data.csproj", "{8E538C32-4B8A-4C96-88E4-C99EA0656B9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guestbook.Business", "Guestbook.Business\Guestbook.Business.csproj", "{5FB0AE98-9E94-4058-B1C3-0E30DD5E3740}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4111B445-FF82-482E-AC32-EB04CFA06690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4111B445-FF82-482E-AC32-EB04CFA06690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4111B445-FF82-482E-AC32-EB04CFA06690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4111B445-FF82-482E-AC32-EB04CFA06690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E538C32-4B8A-4C96-88E4-C99EA0656B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E538C32-4B8A-4C96-88E4-C99EA0656B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E538C32-4B8A-4C96-88E4-C99EA0656B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E538C32-4B8A-4C96-88E4-C99EA0656B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB0AE98-9E94-4058-B1C3-0E30DD5E3740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB0AE98-9E94-4058-B1C3-0E30DD5E3740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB0AE98-9E94-4058-B1C3-0E30DD5E3740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB0AE98-9E94-4058-B1C3-0E30DD5E3740}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
