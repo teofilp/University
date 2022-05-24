@@ -1,0 +1,15 @@
+.table-content .ant-table-thead > tr > th {
+  color: #fff;
+  background: #00152a !important;
+}
+
+#title-style {
+  text-align: center;
+  flex: 1;
+  color: #00152a;
+}
+
+#page-title {
+  font-weight: bold;
+  margin-bottom: 64px;
+}

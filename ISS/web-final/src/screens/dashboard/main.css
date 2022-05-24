@@ -1,0 +1,27 @@
+#info-card-style {
+  width: 30%;
+  margin-left: 5%;
+  height: 600px;
+  overflow: auto;
+}
+
+.ant-card-head.card-style {
+  background-color: #00152a;
+  color: #fff;
+}
+
+#certificate-card-style {
+  width: 30%;
+  margin-left: 5%;
+  height: 600px;
+  overflow: auto;
+}
+
+#profile-card {
+  width: 300px;
+  height: 600px;
+}
+
+#upload-button {
+  width: 200px;
+}
