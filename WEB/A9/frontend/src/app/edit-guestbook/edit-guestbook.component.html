@@ -1,0 +1,26 @@
+<div id="panel-container">
+  <div id="left-panel">
+    <img id="logo" src="../assets/logo.png" alt="" />
+  </div>
+  <div id="right-panel">
+    <h1>Edit record</h1>
+    <div class="form-item">
+      <label for="email">Author</label>
+      <input [(ngModel)]="author" type="email" id="author" name="email" />
+    </div>
+    <div class="form-item">
+      <label for="title">Title</label>
+      <input [(ngModel)]="title" type="text" id="title" name="title" />
+    </div>
+    <div class="form-item">
+      <label for="description">Description</label>
+      <textarea
+        [(ngModel)]="description"
+        name="description"
+        id="description"
+        rows="5"
+      ></textarea>
+    </div>
+    <button class="submit" (click)="handleUpdate()">Update</button>
+  </div>
+</div>

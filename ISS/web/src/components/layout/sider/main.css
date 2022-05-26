@@ -1,0 +1,23 @@
+#sider {
+  width: 15%;
+  height: 100%;
+  padding: 24px 0;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 2px 2px 15px #ddd;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 24px;
+  color: black;
+  transition: all 0.3s;
+}
+
+.link.active {
+  color: #1890ff;
+}

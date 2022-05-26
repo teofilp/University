@@ -1,0 +1,23 @@
+#header-style {
+    padding: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-style {
+    width: 100px;
+    float: right;
+    margin-top: 40px;
+}
+
+.avatar-style {
+    float: right;
+    margin-right: 30px;
+}
+
+.ant-typography.title-style{
+    color: #fff;
+    margin-bottom: 0;
+}
