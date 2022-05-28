@@ -1,3 +1,5 @@
+use RestaurantManager
+
 set transaction isolation level serializable
 begin transaction
 update Restaurants set MaxChefs = 10 Where Id = 5

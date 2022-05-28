@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelationshipDefinition>
+	<ParentTableName>
+		Universities
+	</ParentTableName>
+	<ChildTableName>
+		Faculties
+	</ChildTableName>
+	<ForeignKeyName>
+		FK__Faculties__Unive__276EDEB3
+	</ForeignKeyName>
+	<PrimaryKeyColumnName>
+		Id
+	</PrimaryKeyColumnName>
+	<ForeignKeyColumnName>
+		UniversityId
+	</ForeignKeyColumnName>
+</RelationshipDefinition>

@@ -4,5 +4,5 @@ use [RestaurantManager]
 set transaction isolation level read uncommitted
 begin transaction
 update Chefs set Age = 25 Where Id = 14
-waitfor delay '00:00:10'
+waitfor delay '00:00:15'
 rollback transaction
