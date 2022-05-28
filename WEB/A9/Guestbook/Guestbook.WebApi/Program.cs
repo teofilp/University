@@ -1,5 +1,6 @@
 using Guestbook.Business.Users.Handlers;
 using Guestbook.Data;
+using Guestbook.WebApi.Middleware;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,7 +31,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+// app.UseAuthorization();
+app.UseCustomAuthorization();
 
 app.UseCors();
 

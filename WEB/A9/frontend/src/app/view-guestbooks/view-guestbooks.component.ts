@@ -49,6 +49,7 @@ export class ViewGuestbooksComponent implements OnInit {
     });
 
     xhttp.open('GET', `${environment.baseURL}/Guestbooks?${urlParams}`);
+    xhttp.setRequestHeader('x-userId', `${sessionStorage.getItem('userId')}`);
     xhttp.send();
   }
 
@@ -78,6 +79,7 @@ export class ViewGuestbooksComponent implements OnInit {
         }
       };
       xhttp.open('DELETE', `${environment.baseURL}/Guestbooks/${id}`);
+      xhttp.setRequestHeader('x-userId', `${sessionStorage.getItem('userId')}`);
       xhttp.send();
     }
   }

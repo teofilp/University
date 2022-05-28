@@ -9,10 +9,10 @@ import myModel
 class TrainModel:
     def __init__(self):
         self.lossFunction = torch.nn.MSELoss()
-        self.neuralNetwork = myModel.Net(2, 10, 1).double()
+        self.neuralNetwork = myModel.Net(2, 20, 1).double()
         # we use an optimizer that implements stochastic gradient descent 
-        self.optimizerBatch = torch.optim.SGD(self.neuralNetwork.parameters(), lr=0.01)
-
+        self.optimizerBatch = torch.optim.SGD(self.neuralNetwork.parameters(), lr=0.005)
+ 
         tensors = torch.load('mydataset.dat')
         self.inputTensor = tensors.narrow(1, 0, 2)
         self.outputTensor = tensors.narrow(1, 2, 1)

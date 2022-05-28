@@ -34,6 +34,7 @@ export class EditGuestbookComponent implements OnInit {
     };
 
     xhttp.open('GET', `${environment.baseURL}/Guestbooks/${id}`);
+    xhttp.setRequestHeader('x-userId', `${sessionStorage.getItem('userId')}`);
     xhttp.send();
   }
 
@@ -55,6 +56,7 @@ export class EditGuestbookComponent implements OnInit {
     };
 
     xhttp.open('PUT', `${environment.baseURL}/Guestbooks`);
+    xhttp.setRequestHeader('x-userId', `${sessionStorage.getItem('userId')}`);
     xhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 
     xhttp.send(

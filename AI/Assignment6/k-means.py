@@ -55,9 +55,6 @@ def KMeans(x, k, no_of_iterations):
         c = random.choice(x)
         centroids.append((c[0], c[1]))
 
-    print("centroids = ", centroids)
-
-
     solution = dict() # dictionary of clusters and their corresponding points
 
     for i in range(no_of_iterations):
@@ -70,24 +67,36 @@ def KMeans(x, k, no_of_iterations):
 
     return solution, centroids
 
-
 def readPoints():
     points = []
+    labels = {}
     with open('dataset.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
             if row[1] != 'val1' and row[2] != 'val2':
-                points.append((float(row[1]), float(row[2])))
-    return points
+                points.append((float(row[1]), float(row[2]), row[0]))
+                labels[(float(row[1]), float(row[2]))] = row[0]
+    return points, labels
 
+def getStats(initialPoints, computedPoints, k):
+    stat = [dict() for _ in range(k)]
+    for point in initialPoints:
+        if initialPoints[point] not in stat[computedPoints[point]]:
+            stat[computedPoints[point]][initialPoints[point]] = 0
+        stat[computedPoints[point]][initialPoints[point]] += 1
+    return stat   
 
 if __name__ == "__main__":
-    data = readPoints()
+    data, labels = readPoints()
+    points, centroids = KMeans(data, 4, 2500)
 
-    points, centroids = KMeans(data, 5, 2500)
+    stats = getStats(labels, points, 4)
+    accuracy = sum([max(stat.values()) for stat in stats]) / len(data)
+    print(stats)
+    print("Accuracy: ", accuracy)
 
-    colors = ["wheat", "violet", "silver", "powderblue", "lightRed"]
-
+    colors = ["violet", "silver", "powderblue", "wheat"]
+    
     for point in points:
         plt.scatter(point[0], point[1], color=colors[points[point]])
     for point in centroids:
