@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelationshipDefinition>
+	<ParentTableName>
+		Faculties
+	</ParentTableName>
+	<ChildTableName>
+		Departments
+	</ChildTableName>
+	<ForeignKeyName>
+		FK__Departmen__Facul__2A4B4B5E
+	</ForeignKeyName>
+	<PrimaryKeyColumnName>
+		Id
+	</PrimaryKeyColumnName>
+	<ForeignKeyColumnName>
+		FacultyId
+	</ForeignKeyColumnName>
+</RelationshipDefinition>
