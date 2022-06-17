@@ -1,0 +1,54 @@
+<div class="home-container">
+  <div class="section">
+    <h2>Search players</h2>
+
+    <input
+      type="text"
+      (keyup)="handleChange($event)"
+      placeholder="e.g: Player 1"
+    />
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of getSortedPlayers()">
+          <td>{{ player.Id }}</td>
+          <td>{{ player.Name }}</td>
+          <td>{{ player.Position }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Team members</h2>
+    <button (click)="getDegree(1)">1st degree</button>
+    <button (click)="getDegree(2)">2st degree</button>
+    <button (click)="getDegree(3)">3st degree</button>
+    <div>
+      <span>Same position</span>
+      <input type="checkbox" [(ngModel)]="check" />
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of degreePlayers">
+          <td>{{ player.Id }}</td>
+          <td>{{ player.Name }}</td>
+          <td>{{ player.Position }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

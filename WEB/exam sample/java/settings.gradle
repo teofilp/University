@@ -1,0 +1,4 @@
+rootProject.name = 'sdilab11'
+include 'catalog-core'
+include 'catalog-web'
+include 'client'

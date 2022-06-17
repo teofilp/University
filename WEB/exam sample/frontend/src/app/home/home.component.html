@@ -1,0 +1,76 @@
+<div class="table-section">
+  <h3>All projects</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>ProjectManagerId</th>
+        <th>Description</th>
+        <th>Members</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.id }}</td>
+        <td>{{ project.name }}</td>
+        <td>{{ project.managerId }}</td>
+        <td>{{ project.description }}</td>
+        <td>{{ project.members }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="table-section">
+  <h3>My projects</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of myProjects">
+        <td>{{ project.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="assign-developer">
+  <h3>Assign developer</h3>
+  <input
+    type="text"
+    placeholder="Developer username"
+    [(ngModel)]="developerName"
+  />
+  <textarea
+    type="text"
+    placeholder="Project1, Project 2, ..."
+    [(ngModel)]="assignedProjects"
+  ></textarea>
+
+  <button (click)="assign()">Assign</button>
+</div>
+
+<div class="table-section">
+  <h3>Devs</h3>
+  <input [(ngModel)]="searchKey" />
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Skills</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dev of filteredDevs()">
+        <td>{{ dev.id }}</td>
+        <td>{{ dev.name }}</td>
+        <td>{{ dev.age }}</td>
+        <td>{{ dev.skills }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

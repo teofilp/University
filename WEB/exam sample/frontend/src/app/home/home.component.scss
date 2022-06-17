@@ -1,0 +1,13 @@
+.table-section {
+  margin-bottom: 32px;
+}
+
+.assign-developer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  & > * {
+    padding: 8px;
+  }
+}

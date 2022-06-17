@@ -1,0 +1,14 @@
+
+apply plugin: 'war'
+
+dependencies {
+    implementation(project(':catalog-core'))
+
+    implementation(group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion")
+
+//    compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$javaxServeletApiVersion"
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    implementation(group: 'javax.servlet', name: 'javax.servlet-api', version:"$javaxServeletApiVersion")
+
+
+}
